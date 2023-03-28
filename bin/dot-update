@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DOTFILES_PATH="~/.dotfiles"
+
+cd $DOTFILES_PATH
+
+echo -e "Atualizando repositorio"
+git pull origin main
+
+echo -e "Atualizando links"
+bash -c "${DOTFILES_PATH}/scripts/create_links.sh"
