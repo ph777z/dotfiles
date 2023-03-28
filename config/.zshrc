@@ -47,4 +47,4 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=
 ###################
 #      paths      #
 ###################
-export PATH="$PATH:$HOME/.cargo/bin/"
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/.bin"
