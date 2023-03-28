@@ -1,4 +1,4 @@
-DOTFILES_PATH="~/.dotfiles"
+DOTFILES_PATH=~/.dotfiles
 
 # Paths
 if [ ! -d ~/.bin ];then

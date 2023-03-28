@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_PATH="~/.dotfiles"
+DOTFILES_PATH=~/.dotfiles
 
 cd $DOTFILES_PATH
 
