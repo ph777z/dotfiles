@@ -1,0 +1,50 @@
+add_newline = false
+
+format = '$username$directory$all$character'
+right_format = '$time'
+
+[character]
+success_symbol = "[&](blue)"
+error_symbol = "[✗](bold red)"
+
+[time]
+format = '[$time]($style)'
+style = 'grey'
+disabled = false
+
+[git_branch]
+symbol = " "
+
+[nodejs]
+symbol = "⬢ "
+version_format = "v${major}.${minor}"
+
+[lua]
+symbol = " "
+version_format = "v${major}.${minor}"
+
+[python]
+symbol = " "
+version_format = "v${major}.${minor}"
+
+[directory]
+truncation_length = 8
+truncation_symbol = '…/'
+
+[username]
+style_root = 'boold yellow'
+style_user = 'bold green'
+format = '[$user]($style)@ '
+show_always = true
+
+[battery]
+disabled = true
+
+[line_break]
+disabled = true
+
+[cmd_duration]
+disabled = true
+
+[package]
+disabled = true
