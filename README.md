@@ -1,7 +1,11 @@
 # Dotfiles
 
 
-*WM:* qtile
+**Os:** [Arch](https://archlinux.org)
+
+**Wm:** [qtile](http://www.qtile.org)
+
+**Shell:** zsh
 
 
 ## Install
