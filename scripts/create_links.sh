@@ -11,11 +11,13 @@ if [ ! -d ~/.config ];then
   mkdir ~/.config
 fi
 
+
 # scripts
 if [ ! -e ~/.bin/dot-update ];then
   echo 'Criando link simbolico para dot-update'
   ln -sf "${DOTFILES_PATH}/bin/dot-update" ~/.bin/dot-update
 fi
+
 
 # zsh
 if [ ! -e ~/.zshrc ];then
@@ -31,5 +33,12 @@ fi
 # wm
 if [ ! -d ~/.config/qtile ];then
   echo 'Criando link simbolico para qtile'
-  ln -sf "${DOTFILES_PATH}/config/qtile" ~/.config/teste
+  ln -sf "${DOTFILES_PATH}/config/qtile" ~/.config/qtile
+fi
+
+
+# file manager
+if [ ! -d ~/.config/ranger ];then
+  echo 'Crianfo link simbolico para ranger'
+  ln -sf "${DOTFILES_PATH}/config/ranger" ~/.config/ranger
 fi
