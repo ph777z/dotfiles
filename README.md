@@ -7,6 +7,8 @@
 
 **Shell:** zsh
 
+**File Manager:** [ranger](https://ranger.github.io/)
+
 
 ## Install
 
