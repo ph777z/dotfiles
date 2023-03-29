@@ -39,6 +39,13 @@ fi
 
 # file manager
 if [ ! -d ~/.config/ranger ];then
-  echo 'Crianfo link simbolico para ranger'
+  echo 'Crianfdo link simbolico para ranger'
   ln -sf "${DOTFILES_PATH}/config/ranger" ~/.config/ranger
+fi
+
+
+# others
+if [ ! -e ~/.profile ];then
+  echo 'Criando link simbolico para .profile'
+  ln -sf "${DOTFILES_PATH}/config/.profile" ~/.profile
 fi
