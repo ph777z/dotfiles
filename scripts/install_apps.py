@@ -3,7 +3,7 @@ import subprocess
 from pathlib import Path
 
 
-DOTFILES_PATH = Path(Path.home(), 'dotfiles')
+DOTFILES_PATH = Path(Path.home(), '.dotfiles')
 APPS_FILE = Path(DOTFILES_PATH, 'scripts', 'apps.json')
 
 
