@@ -11,6 +11,11 @@ if [ ! -d ~/.config ];then
   mkdir ~/.config
 fi
 
+if [ ! -d ~/Imagens/backgrounds ];then
+  echo 'Criando pasta de backgrounds'
+  mkdir ~/Imagens/backgrounds
+fi
+
 
 # scripts
 if [ ! -e ~/.bin/dot-update ];then
@@ -49,3 +54,5 @@ if [ ! -e ~/.profile ];then
   echo 'Criando link simbolico para .profile'
   ln -sf "${DOTFILES_PATH}/config/.profile" ~/.profile
 fi
+
+ln -sf "${DOTFILES_PATH}/assets/backgrounds/*" ~/Imagens/backgrounds
