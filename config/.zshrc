@@ -2,7 +2,19 @@
 #   zsh config    #
 ###################
 eval "$(starship init zsh)"
+if [ ! -d ~/.zsh ];then
+  mkdir ~/.zsh
+fi
+
+if [ ! -d ~/.zsh/zsh-autosuggestions ];then
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+  clear
+fi
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+if [ ! -d ~/.zsh/zsh-syntax-highlighting ];then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+fi
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export HISTFILE=~/.zsh_history
@@ -14,6 +26,10 @@ setopt HIST_IGNORE_ALL_DUPS
 ###################
 #      asdf       #
 ###################
+if [ ! -d ~/.asdf ];then
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
+fi
+
 . $HOME/.asdf/asdf.sh
 
 

@@ -24,6 +24,7 @@
     "qtile",
     "ranger",
     "rofi",
+    "starship",
     "tmux",
     "xdg-user-dirs",
     "zathura",
