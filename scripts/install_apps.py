@@ -39,7 +39,7 @@ if app_installed('paru-bin') != 0:
         ['bash', Path(DOTFILES_PATH, 'scripts', 'install_paru.sh')]
     )
 
-subprocess.run(['pacman', '-Sy'])
+subprocess.run(['sudo', 'pacman', '-Sy'])
 
 for app in apps['pacman']:
     if app_installed(app) != 0:
