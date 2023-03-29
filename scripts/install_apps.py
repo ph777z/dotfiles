@@ -49,3 +49,16 @@ for app in apps['pacman']:
 for app in apps['aur']:
     if app_installed(app) != 0:
         install_aur_app(app)
+
+
+for app in apps['flatpak']:
+    flatpak_list = subprocess.Popen(
+        ['flatpak', 'list'], stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    )
+
+    installed = subprocess.run(
+        ['grep', 'anydesk'], stdin=flatpak_list.stdout, capture_output=True
+    )
+
+    if installed.returncode != 0:
+        subprocess.run(['flatpak', 'install', '-y', 'flathub', app])

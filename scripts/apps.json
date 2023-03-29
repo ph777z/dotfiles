@@ -1,19 +1,31 @@
 {
   "pacman": [
-    "bat",
+    "alacritty",
     "dmenu",
+    "docker",
+    "docker-compose",
     "dunst",
     "exa",
-    "fd",
+    "feh",
+    "firefox",
+    "flatpak",
+    "git",
+    "htop",
     "kitty",
+    "lightdm",
+    "lightdm-gtk-greeter",
     "mpv",
     "neovim",
+    "noto-fonts-cjk",
+    "noto-fonts-emoji",
     "pacman-contrib",
     "pamixer",
+    "picom",
     "qtile",
     "ranger",
     "rofi",
     "tmux",
+    "xdg-user-dirs",
     "zathura",
     "zathura-pdf-mupdf",
     "zsh"
@@ -21,5 +33,11 @@
   "aur": [
     "betterlockscreen",
     "devour"
+  ],
+  "flatpak": [
+    "com.bitwarden.desktop",
+    "com.anydesk.Anydesk",
+    "com.authy.Authy",
+    "md.obsidian.Obsidian"
   ]
 }
