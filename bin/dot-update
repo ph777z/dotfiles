@@ -4,8 +4,11 @@ DOTFILES_PATH=~/.dotfiles
 
 cd $DOTFILES_PATH
 
-echo -e "Atualizando repositorio"
+echo -e "Atualizando repositorio\n"
 git pull origin main
 
-echo -e "Atualizando links"
+echo -e "\nAtualizando dependencias\n"
+python "${DOTFILES_PATH}/scripts/install_apps.py"
+
+echo -e "\nAtualizando links\n"
 bash "${DOTFILES_PATH}/scripts/create_links.sh"

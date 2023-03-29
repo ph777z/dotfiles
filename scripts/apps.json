@@ -1,0 +1,25 @@
+{
+  "pacman": [
+    "bat",
+    "dmenu",
+    "dunst",
+    "exa",
+    "fd",
+    "kitty",
+    "mpv",
+    "neovim",
+    "pacman-contrib",
+    "pamixer",
+    "qtile",
+    "ranger",
+    "rofi",
+    "tmux",
+    "zathura",
+    "zathura-pdf-mupdf",
+    "zsh"
+  ],
+  "aur": [
+    "betterlockscreen",
+    "devour",
+  ]
+}
