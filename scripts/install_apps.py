@@ -57,7 +57,7 @@ for app in apps['flatpak']:
     )
 
     installed = subprocess.run(
-        ['grep', 'anydesk'], stdin=flatpak_list.stdout, capture_output=True
+        ['grep', app], stdin=flatpak_list.stdout, capture_output=True
     )
 
     if installed.returncode != 0:
