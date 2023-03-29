@@ -15,22 +15,6 @@ def app_installed(app):
     return result.returncode
 
 
-def install_pacman_app(app):
-    installed = subprocess.run(
-        ['sudo', 'pacman', '-S', '--noconfirm', app]
-    )
-
-    return installed.returncode
-
-
-def install_aur_app(app):
-    installed = subprocess.run(
-        ['paru', '-S', '--noconfirm', app]
-    )
-
-    return installed.returncode
-
-
 with APPS_FILE.open() as apps_json:
     apps = json.loads(apps_json.read())
 
@@ -43,12 +27,16 @@ subprocess.run(['sudo', 'pacman', '-Sy'])
 
 for app in apps['pacman']:
     if app_installed(app) != 0:
-        install_pacman_app(app)
+        subprocess.run(
+            ['sudo', 'pacman', '-S', '--noconfirm', app]
+        )
 
 
 for app in apps['aur']:
     if app_installed(app) != 0:
-        install_aur_app(app)
+        subprocess.run(
+            ['paru', '-S', '--noconfirm', app]
+        )
 
 
 for app in apps['flatpak']:
