@@ -40,6 +40,7 @@ alias exa="exa --icons"
 alias l="exa"
 alias ll="exa -l"
 alias la="exa -la"
+alias tree="exa -T"
 alias rm="rm -r"
 
 alias mpv="devour mpv"
