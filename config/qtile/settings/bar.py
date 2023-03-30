@@ -1,13 +1,13 @@
 from pathlib import Path
 
 from libqtile import bar, widget
-from libqtile.config import Click
 from libqtile.lazy import lazy
 
 from .colors import theme
 from .widgets import Backlight
 from .apps import terminal
 from .conts import SCRIPTS_PATH
+from .devides import get_backlight
 
 
 widget_defaults = dict(
@@ -19,6 +19,8 @@ widget_defaults = dict(
 )
 
 extension_defaults = widget_defaults.copy()
+
+backlight_file = get_backlight()
 
 BAR = bar.Bar(
     [
@@ -33,7 +35,8 @@ BAR = bar.Bar(
             disable_drag=True,
         ),
         widget.Sep(
-            foreground=theme['color2']
+            foreground=theme['color1'],
+            padding=10
         ),
         widget.WindowName(
             format='{name}',
@@ -47,10 +50,7 @@ BAR = bar.Bar(
         ),
         widget.Sep(
             foreground=theme['color1'],
-            padding=5
-        ),
-        widget.Sep(
-            foreground=theme['color2'],
+            padding=10
         ),
         widget.CheckUpdates(
             fmt=' {}',
@@ -66,26 +66,15 @@ BAR = bar.Bar(
                 )
             }
         ),
-        widget.Sep(
-            foreground=theme['color2'],
-        ),
         Backlight(
             fmt='󰃟 {}',
             backlight_name='intel_backlight',
             scroll=False,
-        ),
-        widget.Sep(
-            foreground=theme['color2'],
-        ),
-        widget.Bluetooth(
-            fmt=' {}',
-            hci='/dev_41_42_E8_33_E8_09',
-            mouse_callbacks = {
-                'Button1': lazy.spawn('rofi-bluetooth')
-            }
-        ),
-        widget.Sep(
-            foreground=theme['color2'],
+        )
+        if backlight_file
+        else widget.Sep(
+            foreground=theme['color1'],
+            padding=0
         ),
         widget.Volume(
             fmt=' {}',
@@ -100,7 +89,15 @@ BAR = bar.Bar(
             }
         ),
         widget.Sep(
-            foreground=theme['color2'],
+            foreground=theme['color1'],
+            padding=10
+        ),
+        widget.Bluetooth(
+            fmt=' {}',
+            hci='/dev_41_42_E8_33_E8_09',
+            mouse_callbacks = {
+                'Button1': lazy.spawn('rofi-bluetooth')
+            }
         ),
         widget.Wlan(
             interface='wlp1s0',
@@ -113,7 +110,8 @@ BAR = bar.Bar(
             }
         ),
         widget.Sep(
-            foreground=theme['color2'],
+            foreground=theme['color1'],
+            padding=10
         ),
         widget.Clock(
             format='󰸗 %d/%m/%Y  %H:%M',
@@ -122,7 +120,8 @@ BAR = bar.Bar(
             }
         ),
         widget.Sep(
-            foreground=theme['color2'],
+            foreground=theme['color1'],
+            padding=10
         ),
         widget.TextBox(
             '',
