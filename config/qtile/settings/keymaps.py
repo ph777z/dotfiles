@@ -9,6 +9,7 @@ from .conts import SCRIPTS_PATH
 
 mod = 'mod4'
 rofi_menu = 'rofi -show drun'
+rofi_run = 'rofi -show run'
 rofi_window = 'rofi -show window'
 
 keys = [
@@ -41,7 +42,7 @@ keys = [
     Key([mod, 'control'], 'q', lazy.spawn(f'sh {Path(SCRIPTS_PATH, "powermenu.sh")}'), desc='Shutdown Qtile'),
     Key([mod, 'control'], 'Tab', lazy.next_layout(), desc='Goes to next layout'),
     Key([mod], 'w', lazy.window.kill(), desc='Kill focused window'),
-    Key([mod], 'r', lazy.spawn('dmenu_run'), desc='Spawn a command using a prompt widget'),
+    Key([mod], 'r', lazy.spawn(rofi_run), desc='Spawn a command using a prompt widget'),
     Key([mod], 'q', lazy.spawn('kitty bash -c "xprop;read"')),
 
     #Keys multimedia

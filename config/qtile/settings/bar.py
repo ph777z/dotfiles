@@ -40,13 +40,6 @@ BAR = bar.Bar(
             empty_group_string='Desktop',
             width=200,
         ),
-        widget.Sep(
-            foreground=theme['color2'],
-            padding=10
-        ),
-        widget.Prompt(
-            prompt='Run: ',
-        ),
         widget.Spacer(),
         widget.Systray(
             icon_size=16,
