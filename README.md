@@ -7,7 +7,9 @@
 
 **Shell:** zsh
 
-**File Manager:** [ranger](https://ranger.github.io/)
+**File Manager:** [ranger](https://ranger.github.io)
+
+**Terminal:** [kitty](https://sw.kovidgoyal.net/kitty)
 
 
 ## Install
