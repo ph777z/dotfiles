@@ -25,7 +25,7 @@ backlight_file = get_backlight()
 BAR = bar.Bar(
     [
         widget.GroupBox(
-            highlight_method='text',
+            highlight_method='line',
             urgent_alert_method='text',
             this_current_screen_border=theme['color4'],
             active=theme['color3'],
@@ -33,6 +33,7 @@ BAR = bar.Bar(
             margin_x=0,
             rounded=True,
             disable_drag=True,
+            borderwidth=2
         ),
         widget.Sep(
             foreground=theme['color1'],
