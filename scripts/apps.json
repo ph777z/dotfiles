@@ -21,6 +21,7 @@
     "pacman-contrib",
     "pamixer",
     "picom",
+    "python-xlib",
     "qtile",
     "ranger",
     "rofi",
