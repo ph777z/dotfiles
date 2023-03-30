@@ -54,11 +54,19 @@ if [ ! -d ~/.config/ranger ];then
 fi
 
 
+# terminal
+if [ ! -d ~/.config/kitty ];then
+  echo 'Criando link simbolico para kitty'
+  ln -sf "${DOTFILES_PATH}/config/kitty" ~/.config/kitty
+fi
+
+
 # others
 if [ ! -e ~/.profile ];then
   echo 'Criando link simbolico para .profile'
   ln -sf "${DOTFILES_PATH}/config/.profile" ~/.profile
 fi
+
 
 # assets
 ln -sf $DOTFILES_PATH/assets/backgrounds/* ~/Imagens/backgrounds
