@@ -11,6 +11,11 @@ if [ ! -d ~/.config ];then
   mkdir ~/.config
 fi
 
+if [ ! -d ~/.local/share/fonts ]
+  echo "Criando pasta de fontes"
+  mkdir -p ~/.local/share/fonts
+fi
+
 if [ ! -d ~/Imagens/backgrounds ];then
   echo 'Criando pasta de backgrounds'
   mkdir ~/Imagens/backgrounds
@@ -55,4 +60,6 @@ if [ ! -e ~/.profile ];then
   ln -sf "${DOTFILES_PATH}/config/.profile" ~/.profile
 fi
 
-ln -sf "${DOTFILES_PATH}/assets/backgrounds/*" ~/Imagens/backgrounds
+# assets
+ln -sf $DOTFILES_PATH/assets/backgrounds/* ~/Imagens/backgrounds
+ln -sf $DOTFILES_PATH/assets/fonts/* ~/.local/share/fonts
