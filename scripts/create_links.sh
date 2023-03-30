@@ -11,7 +11,7 @@ if [ ! -d ~/.config ];then
   mkdir ~/.config
 fi
 
-if [ ! -d ~/.local/share/fonts ]
+if [ ! -d ~/.local/share/fonts ];then
   echo "Criando pasta de fontes"
   mkdir -p ~/.local/share/fonts
 fi
