@@ -1,7 +1,6 @@
 {
   "pacman": [
     "alacritty",
-    "dmenu",
     "docker",
     "docker-compose",
     "dunst",
