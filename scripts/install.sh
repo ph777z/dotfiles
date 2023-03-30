@@ -10,3 +10,6 @@ python "${DOTFILES_PATH}/scripts/install_apps.py"
 
 echo -e "\nCriando Links\n"
 bash "${DOTFILES_PATH}/scripts/create_links.sh"
+
+echo -e "\nSetando zsh como shell padrão\n"
+chsh -s /bin/zsh
