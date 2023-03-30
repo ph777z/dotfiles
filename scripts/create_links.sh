@@ -23,10 +23,7 @@ fi
 
 
 # scripts
-if [ ! -e ~/.bin/dot-update ];then
-  echo 'Criando link simbolico para dot-update'
-  ln -sf "${DOTFILES_PATH}/bin/dot-update" ~/.bin/dot-update
-fi
+ln -sf $DOTFILES_PATH/bin/* ~/.bin
 
 
 # zsh

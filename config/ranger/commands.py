@@ -9,18 +9,14 @@
 
 from __future__ import (absolute_import, division, print_function)
 
-from pathlib import Path
 
 from ranger.api.commands import Command
-
-
-SCRIPTS_PATH= Path(Path.home(), '.config', 'ranger', 'scripts')
 
 
 class setwall(Command):
     def execute(self):
         _img = self.fm.thisfile
-        sh = Path(SCRIPTS_PATH, 'setwall.sh')
+        sh = 'set-background'
         self.fm.run(f'{sh} {_img}')
 
 

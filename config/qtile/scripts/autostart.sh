@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ ! -e ~/.fehbg ];then
+if [ -e ~/.fehbg ];then
   sh ~/.fehbg &
 else
-  feh --bg-scale --no-fehbg ~/Imagens/backgrounds/walpaper1.jpg &
+  set-background ~/Imagens/backgrounds/default.jpg &
 fi
 picom -f & 
