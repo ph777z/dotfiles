@@ -1,3 +1,5 @@
+#!/bin/bash
+
 DOTFILES_PATH=~/.dotfiles
 
 # Paths
@@ -32,8 +34,8 @@ if [ ! -e ~/.zshrc ];then
   ln -sf "${DOTFILES_PATH}/config/.zshrc" ~/.zshrc
 fi
 if [ ! -e ~/.config/starship.toml ];then
-    echo 'Criando link simbolico para starship.toml'
-    ln -sf "${DOTFILES_PATH}/config/starship.toml" ~/.config/starship.toml
+  echo 'Criando link simbolico para starship.toml'
+  ln -sf "${DOTFILES_PATH}/config/starship.toml" ~/.config/starship.toml
 fi
 
 

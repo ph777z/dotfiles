@@ -1,3 +1,5 @@
+#!/bin/python
+
 import json
 import subprocess
 from pathlib import Path

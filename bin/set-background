@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 feh --bg-scale $1
 betterlockscreen -u $1

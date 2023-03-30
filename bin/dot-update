@@ -8,7 +8,7 @@ echo -e "Atualizando repositorio\n"
 git pull origin main
 
 echo -e "\nAtualizando dependencias\n"
-python "${DOTFILES_PATH}/scripts/install_apps.py"
+$DOTFILES_PATH}/scripts/install_apps.py
 
 echo -e "\nAtualizando links\n"
-bash "${DOTFILES_PATH}/scripts/create_links.sh"
+$DOTFILES_PATH}/scripts/create_links.sh

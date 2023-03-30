@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 volume=$(pamixer --get-volume-human)
 

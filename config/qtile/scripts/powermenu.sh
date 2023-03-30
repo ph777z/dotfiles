@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 confirm_action() {
   confirm=$(echo -e "Sim\nNao" | rofi -p "Tem certeza?" -dmenu -l 2)
