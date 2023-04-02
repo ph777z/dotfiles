@@ -3,7 +3,7 @@ from pathlib import Path
 from Xlib import display as xdisplay
 
 
-def get_backlight() -> list | None:
+def get_backlight() -> str | None:
     backligh_path = Path('/sys/class/backlight')
     backlight_files = list(backligh_path.iterdir())
 

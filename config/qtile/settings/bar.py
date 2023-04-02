@@ -69,7 +69,7 @@ BAR = bar.Bar(
         ),
         Backlight(
             fmt='󰃟 {}',
-            backlight_name='intel_backlight',
+            backlight_name=backlight_file,
             scroll=False,
         )
         if backlight_file
