@@ -102,8 +102,8 @@ BAR = bar.Bar(
         ),
         widget.Wlan(
             interface='wlp1s0',
-            format='  {essid}',
-            disconnected_message='󰤭 ',
+            format='󰖩 {essid}',
+            disconnected_message='󰖪 off',
             mouse_callbacks = {
                 'Button1': lazy.spawn(
                     f'{Path(SCRIPTS_PATH, "wifi-menu.sh")}'
