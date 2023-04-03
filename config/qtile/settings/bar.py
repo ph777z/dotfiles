@@ -126,6 +126,11 @@ BAR = bar.Bar(
         widget.Sep(
             foreground=theme['color1'],
             padding=10
+        )
+        if wlan_dev_name or hci0_dev
+        else widget.Sep(
+            foreground=theme['color1'],
+            padding=0
         ),
         widget.Clock(
             format='󰸗 %d/%m/%Y  %H:%M',
@@ -147,6 +152,7 @@ BAR = bar.Bar(
         ),
         widget.Sep(
             foreground=theme['color1'],
+            padding=10
         ),
     ],
     20,
