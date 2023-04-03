@@ -60,6 +60,13 @@ if [ ! -d ~/.config/kitty ];then
 fi
 
 
+# picom
+if [ ! -d ~/.config/picom ];then
+  echo 'Criando link simbolico para picom'
+  ln -sf "${DOTFILES_PATH}/config/picom" ~/.config/picom
+fi
+
+
 # others
 if [ ! -e ~/.profile ];then
   echo 'Criando link simbolico para .profile'
