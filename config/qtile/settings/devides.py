@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 from Xlib import display as xdisplay
@@ -36,3 +37,14 @@ def get_num_monitors():
         return 1
     else:
         return num_monitors
+
+
+def get_wlan() -> str | None:
+    net_path = Path('/sys/class/net')
+
+    for net in net_path.iterdir():
+        net_name = re.search('^w.*', net.name)
+        if net_name:
+            return net.name
+
+    return None

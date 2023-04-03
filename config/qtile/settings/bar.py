@@ -8,7 +8,7 @@ from .colors import theme
 from .widgets import Backlight
 from .apps import terminal
 from .conts import SCRIPTS_PATH
-from .devides import get_backlight
+from .devides import get_backlight, get_wlan
 
 
 widget_defaults = dict(
@@ -22,6 +22,7 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 backlight_file = get_backlight()
+wlan_dev_name = get_wlan()
 hci0_dev = getenv('QTILE_BLUEZ_DEV', None)
 
 BAR = bar.Bar(
@@ -63,7 +64,7 @@ BAR = bar.Bar(
             colour_have_updates=theme['color3'],
             colour_no_updates=theme['color3'],
             update_interval=60,
-            mouse_callbacks = {
+            mouse_callbacks={
                 'Button1': lazy.spawn(
                     f'{terminal} {Path(SCRIPTS_PATH, "update_pkgs.sh")}'
                 )
@@ -98,7 +99,7 @@ BAR = bar.Bar(
         widget.Bluetooth(
             fmt=' {}',
             hci=hci0_dev,
-            mouse_callbacks = {
+            mouse_callbacks={
                 'Button1': lazy.spawn('rofi-bluetooth')
             }
         )
@@ -108,14 +109,19 @@ BAR = bar.Bar(
             padding=0
         ),
         widget.Wlan(
-            interface='wlp1s0',
+            interface=wlan_dev_name,
             format='󰖩 {essid}',
             disconnected_message='󰖪 off',
-            mouse_callbacks = {
+            mouse_callbacks={
                 'Button1': lazy.spawn(
                     f'{Path(SCRIPTS_PATH, "wifi-menu.sh")}'
                 )
             }
+        )
+        if wlan_dev_name
+        else widget.Sep(
+            foreground=theme['color1'],
+            padding=0
         ),
         widget.Sep(
             foreground=theme['color1'],
@@ -123,7 +129,7 @@ BAR = bar.Bar(
         ),
         widget.Clock(
             format='󰸗 %d/%m/%Y  %H:%M',
-            mouse_callbacks = {
+            mouse_callbacks={
                 'Button1': lazy.spawn(f'{terminal} sh -c "cal; read"')
             }
         ),
@@ -133,12 +139,12 @@ BAR = bar.Bar(
         ),
         widget.TextBox(
             '',
-            mouse_callbacks = {
+            mouse_callbacks={
                 'Button1': lazy.spawn(
                     f'sh {Path(SCRIPTS_PATH, "powermenu.sh")}'
                 )
             }
-        ), 
+        ),
         widget.Sep(
             foreground=theme['color1'],
         ),
