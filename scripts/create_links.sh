@@ -60,6 +60,13 @@ if [ ! -d ~/.config/kitty ];then
 fi
 
 
+# tmux
+if [ ! -e ~/.tmux.conf ];then
+  echo 'Criando link simbolico para tmux'
+  ln -sf "${DOTFILES_PATH}/config/.tmux.conf" ~/.tmux.conf
+fi
+
+
 # picom
 if [ ! -d ~/.config/picom ];then
   echo 'Criando link simbolico para picom'
