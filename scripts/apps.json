@@ -15,6 +15,7 @@
     "lightdm-gtk-greeter",
     "mpv",
     "neovim",
+    "noto-fonts",
     "noto-fonts-cjk",
     "noto-fonts-emoji",
     "pacman-contrib",
