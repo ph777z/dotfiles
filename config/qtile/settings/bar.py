@@ -1,4 +1,5 @@
 from pathlib import Path
+from os import getenv
 
 from libqtile import bar, widget
 from libqtile.lazy import lazy
@@ -21,6 +22,7 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 backlight_file = get_backlight()
+hci0_dev = getenv('QTILE_BLUEZ_DEV', None)
 
 BAR = bar.Bar(
     [
@@ -95,10 +97,15 @@ BAR = bar.Bar(
         ),
         widget.Bluetooth(
             fmt=' {}',
-            hci='/dev_41_42_E8_33_E8_09',
+            hci=hci0_dev,
             mouse_callbacks = {
                 'Button1': lazy.spawn('rofi-bluetooth')
             }
+        )
+        if hci0_dev
+        else widget.Sep(
+            foreground=theme['color1'],
+            padding=0
         ),
         widget.Wlan(
             interface='wlp1s0',
