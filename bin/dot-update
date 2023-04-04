@@ -9,7 +9,7 @@ git pull origin main
 
 echo -e "\nAtualizando dependencias\n"
 $DOTFILES_PATH/scripts/install_apps.py
-$DOTFILES_PATH/scripts/install_tmux.sh
+$DOTFILES_PATH/scripts/config_apps.sh
 
 echo -e "\nAtualizando links\n"
 $DOTFILES_PATH/scripts/create_links.sh
