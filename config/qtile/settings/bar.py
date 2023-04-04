@@ -56,6 +56,11 @@ BAR = bar.Bar(
             foreground=theme['color1'],
             padding=10
         ),
+        widget.KeyboardLayout(
+            fmt='󰌌 {}',
+            configured_keyboards=['us_intl', 'br'],
+            display_map={'us_intl': 'US'}
+        ),
         widget.CheckUpdates(
             fmt=' {}',
             distro='Arch_checkupdates',
