@@ -3,18 +3,26 @@
 DOTFILES_PATH=~/.dotfiles
 
 function create_link() {
-  if [ -d $2 ];then
-    if ! file -s $2 | rg "symbolic link";then
-      mv $2 "$2.bkp"
+  if [ ! -z "$2" ];then
+    local LINK_PATH="$HOME/$2/$1"
+  else
+    local LINK_PATH="$HOME/$1"
+  fi
+
+  if [ -d $LINK_PATH ] || [ -e $LINK_PATH ];then
+    if ! file -s $LINK_PATH | rg "symbolic link" &>/dev/null;then
+      mv $LINK_PATH "$LINK_PATH.bkp"
+    else
+      echo 'teste'
+      return
     fi
   fi
 
-  ln -sf $1 $2 
+  ln -sf "$DOTFILES_PATH/config/$1" "$LINK_PATH" 
 }
 
-
 # Paths
-if [ ! -d ~/.bin ];then
+if [ ! -d ~/.local/bin ];then
   echo 'Criando pasta ~/.local/bin'
   mkdir -p ~/.local/bin
 fi
@@ -38,12 +46,13 @@ ln -sf $DOTFILES_PATH/bin/* ~/.local/bin
 ln -sf $DOTFILES_PATH/assets/backgrounds/* ~/Imagens/backgrounds
 ln -sf $DOTFILES_PATH/assets/fonts/* ~/.local/share/fonts
 
-create_link "${DOTFILES_PATH}/config/.zshrc" ~/.zshrc
-create_link "${DOTFILES_PATH}/config/starship.toml" ~/.config/starship.toml
-create_link "${DOTFILES_PATH}/config/qtile" ~/.config/qtile
-create_link "${DOTFILES_PATH}/config/ranger" ~/.config/ranger
-create_link "${DOTFILES_PATH}/config/kitty" ~/.config/kitty
-create_link "${DOTFILES_PATH}/config/.tmux.conf" ~/.tmux.conf
-create_link "${DOTFILES_PATH}/config/picom" ~/.config/picom
-create_link "${DOTFILES_PATH}/config/lvim" ~/.config/lvim
-create_link "${DOTFILES_PATH}/config/.profile" ~/.profile
+create_link .zshrc
+create_link .profile
+create_link .tmux.conf
+
+create_link lvim .config
+create_link qtile .config
+create_link kitty .config
+create_link picom .config
+create_link ranger .config
+create_link starship.toml .config
