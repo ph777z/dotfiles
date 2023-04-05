@@ -13,7 +13,6 @@ function create_link() {
     if ! file -s $LINK_PATH | rg "symbolic link" &>/dev/null;then
       mv $LINK_PATH "$LINK_PATH.bkp"
     else
-      echo 'teste'
       return
     fi
   fi
