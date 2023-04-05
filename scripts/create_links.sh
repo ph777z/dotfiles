@@ -51,6 +51,7 @@ create_link .profile
 create_link .tmux.conf
 
 create_link lvim .config
+$HOME/.local/bin/lvim --headless -c "autocmd User PackerComplete quitall" -c "PackerSync" 
 create_link qtile .config
 create_link kitty .config
 create_link picom .config
