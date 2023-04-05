@@ -5,7 +5,7 @@ DOTFILES_PATH=~/.dotfiles
 function create_link() {
   if [ -d $2 ];then
     if ! file -s $2 | rg "symbolic link";then
-      mv $2 "$1.bkp"
+      mv $2 "$2.bkp"
     fi
   fi
 
