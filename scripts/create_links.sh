@@ -74,6 +74,13 @@ if [ ! -d ~/.config/picom ];then
 fi
 
 
+# lvim
+if [ ! -d ~/.config/lvim ];then
+  echo 'Criando link simbolico para lvim'
+  ln -sf "${DOTFILES_PATH}/config/lvim" ~/.config/lvim
+fi
+
+
 # others
 if [ ! -e ~/.profile ];then
   echo 'Criando link simbolico para .profile'
