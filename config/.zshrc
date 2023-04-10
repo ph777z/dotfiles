@@ -42,6 +42,8 @@ alias ll="exa -l"
 alias la="exa -la"
 alias tree="exa -T"
 alias rm="rm -r"
+alias hx="helix"
+alias vim="nvim"
 
 alias mpv="devour mpv"
 alias zathura="devour zathura"
