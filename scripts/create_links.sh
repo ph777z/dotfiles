@@ -54,3 +54,4 @@ create_link kitty .config
 create_link picom .config
 create_link ranger .config
 create_link starship.toml .config
+create_link helix .config
