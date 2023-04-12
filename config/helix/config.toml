@@ -17,5 +17,22 @@ hidden = false
 [editor.indent-guides]
 render = true
 
+[editor.lsp]
+display-messages = true
+
+[editor.statusline]
+right = ["diagnostics", "file-type", "selections", "position", "file-encoding", "file-line-ending"]
+
+[editor.whitespace]
+render = "all"
+
+[editor.whitespace.characters]
+tab = "󰌒"
+newline = ""
+
+[keys.normal]
+C-r = ":config-reload"
+C-e = ":config-open"
+
 [keys.normal.space]
 q = ":q"
