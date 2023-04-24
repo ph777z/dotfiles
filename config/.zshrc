@@ -2,6 +2,7 @@
 #   zsh config    #
 ###################
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 if [ ! -d ~/.zsh ];then
   mkdir ~/.zsh
 fi
@@ -49,6 +50,13 @@ alias mpv="devour mpv"
 alias zathura="devour zathura"
 alias frun="devour flatpak run"
 
+venv() {
+  if [ ! -d ./.venv ];then
+    python -m venv .venv
+  fi
+
+  source ./.venv/bin/activate
+}
 
 ###################
 # autocompletions #
