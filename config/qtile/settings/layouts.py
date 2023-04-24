@@ -34,6 +34,7 @@ floating_layout = floating.Floating(
         Match(title='Discord Updater'),
         Match(wm_class='Pavucontrol'),
         Match(wm_class='Anydesk'),
+        Match(wm_class='megasync'),
     ],
 )
 

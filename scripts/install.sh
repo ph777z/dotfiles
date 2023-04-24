@@ -7,6 +7,7 @@ git clone https://github.com/pedrohenrick777/dotfiles.git $DOTFILES_PATH
 
 echo -e "\nInstalando dependencias\n"
 $DOTFILES_PATH/scripts/install_apps.py
+$DOTFILES_PATH/scripts/install_manual_apps.sh
 $DOTFILES_PATH/scripts/config_apps.sh
 $DOTFILES_PATH/scripts/create_links.sh
 xdg-user-dirs-update

@@ -14,3 +14,4 @@ fi
 
 # autostart apps
 picom -f & 
+megasync &
