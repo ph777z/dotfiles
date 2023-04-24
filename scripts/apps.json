@@ -9,7 +9,6 @@
     "exa",
     "fd",
     "feh",
-    "firefox",
     "flatpak",
     "fzf",
     "git",
@@ -63,5 +62,6 @@
     "com.anydesk.Anydesk",
     "com.authy.Authy",
     "md.obsidian.Obsidian",
+    "org.mozilla.firefox"
   ]
 }
