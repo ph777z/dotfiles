@@ -11,6 +11,7 @@
     "feh",
     "firefox",
     "flatpak",
+    "fzf",
     "git",
     "helix",
     "htop",
@@ -49,6 +50,7 @@
     "zathura",
     "zathura-pdf-mupdf",
     "zip",
+    "zoxide",
     "zsh"
   ],
   "aur": [
