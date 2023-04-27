@@ -24,7 +24,7 @@ class InstallApps:
         else:
             if not self.app_installed(to_install):
                 subprocess.run(
-                    ['paru', '-S', '--noconfirm', f'^{to_install}$']
+                    ['paru', '-S', '--noconfirm', to_install]
                 )
     
     @staticmethod
