@@ -35,6 +35,8 @@ function install_deps() {
 
 sudo pacman -Sy
 
+install_deps
+
 git clone https://github.com/pedrohenrick777/dotfiles.git $DOTFILES_PATH
 
 $DOTFILES_PATH/scripts/install_apps.py
