@@ -29,7 +29,7 @@ function reboot_question() {
 
 function install_deps() {
   for dep in "${__deps[@]}"; do
-    sudo pacman -S $dep
+    sudo pacman -S --noconfirm $dep
   done
 }
 
