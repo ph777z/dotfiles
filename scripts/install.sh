@@ -36,6 +36,7 @@ function install_deps() {
 sudo pacman -Sy
 
 install_deps
+install_paru
 
 git clone https://github.com/pedrohenrick777/dotfiles.git $DOTFILES_PATH
 
