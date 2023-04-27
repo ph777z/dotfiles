@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_PATH=~/.dotfiles
+DOTFILES_PATH=$HOME/.dotfiles
 
 cd $DOTFILES_PATH
 
@@ -9,6 +9,5 @@ git pull origin main
 
 echo -e "\nAtualizando dependencias\n"
 $DOTFILES_PATH/scripts/install_apps.py
-$DOTFILES_PATH/scripts/install_manual_apps.sh
-$DOTFILES_PATH/scripts/config_apps.sh
-$DOTFILES_PATH/scripts/create_links.sh
+$DOTFILES_PATH/scripts/manual_apps.sh
+$DOTFILES_PATH/scripts/config.sh

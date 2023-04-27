@@ -9,46 +9,82 @@ DOTFILES_PATH = Path(Path.home(), '.dotfiles')
 APPS_FILE = Path(DOTFILES_PATH, 'scripts', 'apps.json')
 
 
-def app_installed(app):
-    result = subprocess.run(
-        ['pacman', '-Qs', f'^{app}$'], capture_output=True
-    )
 
-    return result.returncode
+class InstallApps:
+    
+    def __init__(self, apps: list):
+        self.apps = apps
+        for section in self.apps:
+            self.load_section(section)
+
+    def install_app(self, to_install):
+        if isinstance(to_install, list):
+            for app in to_install:
+                self.install_app(app)
+        else:
+            if not self.app_installed(to_install):
+                subprocess.run(
+                    ['paru', '-S', '--noconfirm', f'^{to_install}$']
+                )
+    
+    @staticmethod
+    def app_installed(app):
+        result = subprocess.run(
+            ['paru', '-Qs', f'^{app}$'], capture_output=True
+        )
+        return not bool(result.returncode)
+
+    def get_section(self, app_name):
+        for section in self.apps:
+            name = section.get('name')
+            if name is None:
+                list = section.get('list')
+                if app_name in list:
+                    return section
+            else:
+                if app_name == name:
+                    return section
+    
+    def load_deps(self, deps):
+        for dep in deps:
+            section = self.get_section(dep)
+            if section is None:
+                self.install_app(dep)
+            else:
+                self.load_section(section)
+        
+    def load_section(self, section):
+        deps = section.get('depends')
+        if deps is not None:
+            self.load_deps(deps)
+                
+        to_install = section.get('name')
+        if to_install is None:
+            to_install = section.get('list')
+    
+        self.install_app(to_install)
 
 
-with APPS_FILE.open() as apps_json:
-    apps = json.loads(apps_json.read())
-
-if app_installed('paru-bin') != 0:
-    subprocess.run(
-        ['bash', Path(DOTFILES_PATH, 'scripts', 'install_paru.sh')]
-    )
-
-subprocess.run(['sudo', 'pacman', '-Sy'])
-
-for app in apps['pacman']:
-    if app_installed(app) != 0:
-        subprocess.run(
-            ['sudo', 'pacman', '-S', '--noconfirm', app]
+def install_flatpaks(apps: list):
+    for app in apps:
+        flatpak_list = subprocess.Popen(
+            ['flatpak', 'list'], stdout=subprocess.PIPE, stderr=subprocess.PIPE
         )
 
-
-for app in apps['aur']:
-    if app_installed(app) != 0:
-        subprocess.run(
-            ['paru', '-S', '--noconfirm', app]
+        installed = subprocess.run(
+            ['grep', app], stdin=flatpak_list.stdout, capture_output=True
         )
 
+        if installed.returncode != 0:
+            subprocess.run(['flatpak', 'install', '-y', 'flathub', app])
 
-for app in apps['flatpak']:
-    flatpak_list = subprocess.Popen(
-        ['flatpak', 'list'], stdout=subprocess.PIPE, stderr=subprocess.PIPE
-    )
 
-    installed = subprocess.run(
-        ['grep', app], stdin=flatpak_list.stdout, capture_output=True
-    )
+if __name__ == "__main__":
+    with APPS_FILE.open() as apps_json:
+        apps = json.loads(apps_json.read())
 
-    if installed.returncode != 0:
-        subprocess.run(['flatpak', 'install', '-y', 'flathub', app])
+    if InstallApps.app_installed('paru-bin'):
+        InstallApps(apps['paru'])
+
+    if InstallApps.app_installed('flatpak'):
+        install_flatpaks(apps['flatpak'])
