@@ -33,7 +33,6 @@
         "python-pip",
         "python-xlib",
         "qtile",
-        "qutebrowser",
         "ranger",
         "ripgrep",
         "rofi",
@@ -58,7 +57,10 @@
       ]
     },
     {
-      "name": "mpv",
+      "list": [
+        "mpv",
+        "qutebrowser"
+      ], 
       "depends": [
         "pipewire-jack"
       ]
