@@ -9,7 +9,7 @@ fi
 if [ -e ~/.fehbg ];then
   ~/.fehbg &
 else
-  ~/.bin/set-background ~/Imagens/backgrounds/default.jpg
+  ~/.local/bin/set-background ~/Imagens/backgrounds/default.jpg
 fi
 
 # autostart apps
