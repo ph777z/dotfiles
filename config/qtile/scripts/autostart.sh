@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# autostart extend
-if [ -e ~/.autostart ];then
- ~/.autostart
-fi
-
 # set wallpaper
 if [ -e ~/.fehbg ];then
   ~/.fehbg &
