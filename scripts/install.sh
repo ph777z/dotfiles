@@ -39,6 +39,8 @@ git clone https://github.com/pedrohenrick777/dotfiles.git $DOTFILES_PATH
   
 sudo pacman -Sy
 
+install_paru
+
 $DOTFILES_PATH/scripts/apps.sh
   
 post_apps_installation
