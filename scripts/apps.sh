@@ -1,4 +1,4 @@
-sudo paru -S --noconfirm alacritty betterlockscreen bluez btop\
+sudo paru -S --needed --noconfirm alacritty betterlockscreen bluez btop\
   devour docker docker-compose dunst exa fd feh flatpak fzf git\
   htop kitty lazygit lightdm lightdm-gtk-greeter neovim nodejs\
   noto-fonts noto-fonts-cjk noto-fonts-emoji megasync-bin mpv npm\
