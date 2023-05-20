@@ -34,14 +34,13 @@ function post_apps_installation() {
   sudo usermod -aG docker $USER
 }
 
-function main() {
-  git clone https://github.com/pedrohenrick777/dotfiles.git $DOTFILES_PATH
-  
-  sudo pacman -Sy
 
-  $DOTFILES_PATH/scripts/apps.sh
+git clone https://github.com/pedrohenrick777/dotfiles.git $DOTFILES_PATH
   
-  post_apps_installation
+sudo pacman -Sy
+
+$DOTFILES_PATH/scripts/apps.sh
   
-  reboot_question
-}
+post_apps_installation
+  
+reboot_question
