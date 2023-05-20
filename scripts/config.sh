@@ -58,6 +58,7 @@ ln -sf $DOTFILES_PATH/assets/fonts/* ~/.local/share/fonts
 create_link .zshrc
 create_link .profile
 create_link .tmux.conf
+create_link .gitconfig
 
 create_link qtile .config
 create_link kitty .config

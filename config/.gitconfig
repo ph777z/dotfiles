@@ -1,0 +1,5 @@
+[user]
+	name = Pedro Henrick
+	email = pedrohenrickqa@gmail.com
+[core]
+	editor = nvim
