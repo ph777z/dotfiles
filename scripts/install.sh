@@ -45,5 +45,5 @@ sudo pacman -Sy
 install_paru
 $SCRIPTS_PATH/apps.sh
 post_apps_installation
-reboot_question
 chown $USER:$USER -R $HOME
+reboot_question
