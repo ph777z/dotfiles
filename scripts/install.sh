@@ -1,6 +1,14 @@
 #!/bin/bash
 
-DOTFILES_PATH=$HOME/.dotfiles
+GIT_URL=https://raw.githubusercontent.com/pedrohenrick777/dotfiles
+source "$(curl -fsSl $GIT_URL/main/scripts/envs.sh)"
+
+function verify_root_user() {
+  if [ `whoami` != 'root' ];then
+    echo 'É preciso rodar o script com permissão de root.'
+    exit 1
+  fi
+}
 
 function install_paru() {
   git clone https://aur.archlinux.org/paru-bin.git $HOME/paru
@@ -21,7 +29,7 @@ function reboot_question() {
 }
 
 function post_apps_installation() {
-  $DOTFILES_PATH/scripts/config.sh
+  $SCRIPTS_PATH/config.sh
 
   xdg-user-dirs-update
 
@@ -34,15 +42,18 @@ function post_apps_installation() {
   sudo usermod -aG docker $USER
 }
 
+function main() {
+  verify_root_user
 
-git clone https://github.com/pedrohenrick777/dotfiles.git $DOTFILES_PATH
+  git clone https://github.com/pedrohenrick777/dotfiles.git $DOTFILES_PATH
   
-sudo pacman -Sy
+  sudo pacman -Sy
 
-install_paru
+  install_paru
 
-$DOTFILES_PATH/scripts/apps.sh
+  $SCRIPTS_PATH/apps.sh
   
-post_apps_installation
+  post_apps_installation
   
-reboot_question
+  reboot_question
+}

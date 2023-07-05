@@ -1,7 +1,5 @@
 #!/bin/bash
 
-DOTFILES_PATH=$HOME/.dotfiles
-
 function create_link() {
   if [ ! -z "$2" ];then
     local LINK_PATH="$HOME/$2/$1"
@@ -65,4 +63,3 @@ create_link kitty .config
 create_link picom .config
 create_link ranger .config
 create_link starship.toml .config
-create_link helix .config
