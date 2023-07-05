@@ -42,18 +42,17 @@ function post_apps_installation() {
   sudo usermod -aG docker $USER
 }
 
-function main() {
-  verify_root_user
 
-  git clone https://github.com/pedrohenrick777/dotfiles.git $DOTFILES_PATH
-  
-  sudo pacman -Sy
+verify_root_user
 
-  install_paru
+git clone https://github.com/pedrohenrick777/dotfiles.git $DOTFILES_PATH
 
-  $SCRIPTS_PATH/apps.sh
-  
-  post_apps_installation
-  
-  reboot_question
-}
+sudo pacman -Sy
+
+install_paru
+
+$SCRIPTS_PATH/apps.sh
+
+post_apps_installation
+
+reboot_question
