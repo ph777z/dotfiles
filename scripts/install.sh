@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GIT_URL=https://raw.githubusercontent.com/pedrohenrick777/dotfiles
-source "$(curl -fsSl $GIT_URL/main/scripts/envs.sh)"
+source <(curl -fsSl $GIT_URL/main/scripts/envs.sh)
 
 function verify_root_user() {
   if [ `whoami` != 'root' ];then
