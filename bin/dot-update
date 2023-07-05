@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source $DOTFILES/scripts/envs.sh
+DOTFILES_PATH=$HOME/.dotfiles
+
 cd $DOTFILES_PATH
 
 echo -e "Atualizando repositorio\n"
