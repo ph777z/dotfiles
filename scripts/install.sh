@@ -13,7 +13,7 @@ function verify_root_user() {
 function install_paru() {
   git clone https://aur.archlinux.org/paru-bin.git $HOME/paru
   cd ~/paru
-  makepkg --noconfirm -si
+  sudo -u $USER makepkg --noconfirm -si
   cd $HOME
   rm -rf $HOME/paru
 }
@@ -35,11 +35,11 @@ function post_apps_installation() {
 
   chsh -s /bin/zsh
 
-  sudo systemctl enable docker.service
-  sudo systemctl enable lightdm.service
+  systemctl enable docker.service
+  systemctl enable lightdm.service
   systemctl enable --user pipewire.service
 
-  sudo usermod -aG docker $USER
+  usermod -aG docker $USER
 }
 
 
@@ -56,3 +56,5 @@ $SCRIPTS_PATH/apps.sh
 post_apps_installation
 
 reboot_question
+
+chown $USER:$USER -R $HOME
