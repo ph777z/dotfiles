@@ -35,7 +35,7 @@ function post_apps_installation() {
   systemctl enable docker.service
   systemctl enable lightdm.service
   systemctl enable sshd
-  sudo -u $SCRIPT_USER systemctl enable --user pipewire.service
+  sudo -E -u $SCRIPT_USER systemctl enable --user pipewire.service
   usermod -aG docker $SCRIPT_USER
 }
 
