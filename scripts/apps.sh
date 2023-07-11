@@ -12,7 +12,6 @@ paru_apps=(
   'feh'
   'flatpak'
   'fzf'
-  'git'
   'htop'
   'kitty'
   'lazygit'
@@ -25,6 +24,7 @@ paru_apps=(
   'noto-fonts-emoji'
   'mpv'
   'npm'
+  'openssh'
   'pacman-contrib'
   'pamixer'
   'pavucontrol'
@@ -44,7 +44,6 @@ paru_apps=(
   'ripgrep'
   'rofi'
   'rust'
-  'rustdesk-bin'
   'starship'
   'tk'
   'tmux'
@@ -68,6 +67,6 @@ flatpak_apps=(
   'com.authy.Authy'
 )
 
-sudo -u $USER paru -S --needed --noconfirm $(printf " %s" "${paru_apps[@]}")
+sudo -u $SCRIPT_USER paru -S --needed --noconfirm $(printf " %s" "${paru_apps[@]}")
 
 flatpak install -y $(printf " %s" "${flatpak_apps[@]}")
