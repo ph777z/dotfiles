@@ -47,10 +47,8 @@ function config_npm() {
 make_dir $HOME/.local/bin
 make_dir $HOME/.config
 make_dir $HOME/.local/share/fonts
-make_dir $HOME/Imagens/backgrounds
 
 ln -sf $DOTFILES_PATH/bin/* ~/.local/bin
-ln -sf $DOTFILES_PATH/assets/backgrounds/* ~/Imagens/backgrounds
 ln -sf $DOTFILES_PATH/assets/fonts/* ~/.local/share/fonts
 
 create_link .zshrc

@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # set wallpaper
-if [ -e ~/.fehbg ];then
-  ~/.fehbg &
+if [ ! -e ~/.fehbg ];then
+    feh --no-fehbg --bg-scale $HOME/.dotfiles/assets/wallpaper.jpg &
 else
-  ~/.local/bin/set-background ~/Imagens/backgrounds/default.jpg
+    $HOME/.fehbg &
 fi
 
 # autostart apps
