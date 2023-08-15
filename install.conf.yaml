@@ -1,0 +1,13 @@
+- link:
+    ~/.config: 
+      glob: true
+      path: dotfiles/config/*
+    ~/:
+      glob: true
+      path: dotfiles/*
+      exclude: [dotfiles/config]
+
+- shell:
+  - scripts/config.sh
+
+- clean: ['~', '~/.config']
