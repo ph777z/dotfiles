@@ -1,7 +1,7 @@
 ZSH_CONFIG=$HOME/.config/zsh
 ASDF_PATH=$ZSH_CONFIG/asdf
 
-source $ZSH_CONFIG/autosuggestions/zsh-autosuggestions.zsh
+source $ZSH_CONFIG/autosuggetions/zsh-autosuggestions.zsh
 source $ZSH_CONFIG/syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_CONFIG/aliases.zsh
 

@@ -2,10 +2,9 @@
     ~/.config: 
       glob: true
       path: dotfiles/config/*
-    ~/:
-      glob: true
-      path: dotfiles/*
-      exclude: [dotfiles/config]
+    ~/.zshrc: dotfiles/.zshrc
+    ~/.gitconfig: dotfiles/.gitconfig
+    ~/.tmux.conf: dotfiles/.tmux.conf
 
 - shell:
   - scripts/config.sh
