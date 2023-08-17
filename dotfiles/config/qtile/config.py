@@ -4,7 +4,7 @@ from pathlib import Path
 
 from libqtile import hook
 
-from . import *
+from base import *
 from screens import screens_obj 
 from keys import keys, mouse
 from layouts import layouts, floating_layout

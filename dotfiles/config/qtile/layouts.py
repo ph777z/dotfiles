@@ -1,7 +1,7 @@
 from libqtile.config import Match
 from libqtile.layout import floating, bsp, max
 
-from . import theme
+from base import theme
 
 
 layouts = [

@@ -6,7 +6,7 @@ from libqtile.config import Group, Screen
 from libqtile.lazy import lazy
 from libqtile import bar, widget
 
-from . import terminal, theme, SCRIPTS_PATH
+from base import terminal, theme, SCRIPTS_PATH
 from devides import get_num_monitors, get_wlan, get_backlight
 
 

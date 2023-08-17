@@ -3,7 +3,7 @@ from pathlib import Path
 from libqtile.config import Key, KeyChord, Click, Drag
 from libqtile.lazy import lazy
 
-from . import terminal, rofi_menu, rofi_window, SCRIPTS_PATH
+from base import terminal, rofi_menu, rofi_window, SCRIPTS_PATH
 from screens import screens_obj
 
 
