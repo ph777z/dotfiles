@@ -6,7 +6,4 @@
     ~/.gitconfig: dotfiles/.gitconfig
     ~/.tmux.conf: dotfiles/.tmux.conf
 
-- shell:
-  - scripts/config.sh
-
 - clean: ['~', '~/.config']
