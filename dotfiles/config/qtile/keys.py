@@ -50,16 +50,16 @@ keys = [
 # Drag floating layouts.
 mouse = [
     Drag(
-        [window_key],
+        [alt_key],
         'Button1',
         lazy.window.set_position_floating(),
         start=lazy.window.get_position(),
     ),
     Drag(
-        [window_key],
+        [alt_key],
         'Button3',
         lazy.window.set_size_floating(),
         start=lazy.window.get_size(),
     ),
-    Click([window_key], 'Button1', lazy.window.bring_to_front()),
+    Click([alt_key], 'Button1', lazy.window.bring_to_front()),
 ]
