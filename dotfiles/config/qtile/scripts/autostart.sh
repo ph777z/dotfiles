@@ -2,7 +2,8 @@
 
 # set wallpaper
 if [ ! -e ~/.fehbg ];then
-    feh --no-fehbg --bg-scale $HOME/.dotfiles/assets/wallpaper.jpg &
+    feh --no-fehbg \
+        --bg-scale /usr/share/dotfiles/wallpaper.jpg
 else
     $HOME/.fehbg &
 fi
