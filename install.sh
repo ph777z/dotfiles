@@ -146,6 +146,7 @@ dotbot_install() {
 
 yay_install
 
+sudo pacman -Sy
 sudo pacman -S --needed --noconfirm $(printf " %s" "${pacman_apps[@]}")
 yay -S --needed --noconfirm $(printf " %s" "${yay_apps[@]}")
 
