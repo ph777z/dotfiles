@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WALLPAPER_PATH=/usr/share/dotfiles/wallpaper.jpg
+WALLPAPER_PATH=/usr/share/backgrounds/dotfiles/wallpaper.jpg
 
 if [ ! -d $HOME/.cache/betterlockscreen ];then
     betterlockscreen -u $WALLPAPER_PATH 
