@@ -117,6 +117,13 @@ config_slock() {
   fi
 }
 
+config_pacman() {
+  local PACMANCONF=/etc/pacman.conf
+
+  sudo sed -i "s/^#Color$/Color/g" \
+    $PACMANCONF
+}
+
 config_npm() {
   local NPMGLOBALDIR=$HOME/.npm-global
 
@@ -164,6 +171,7 @@ config_lighdm
 config_sudoers
 config_profile
 config_slock
+config_pacman
 
 sudo chsh -s /bin/zsh $USER
 systemctl enable --user pipewire.service
