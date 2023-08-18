@@ -1,10 +1,10 @@
 from pathlib import Path
 
-from libqtile.config import Key, KeyChord, Click, Drag
+from libqtile.config import Key, Click, Drag
 from libqtile.lazy import lazy
 
 from base import terminal, rofi_menu, rofi_window, SCRIPTS_PATH
-from screens import screens_obj
+from screens import groups
 
 
 alt_key = 'mod1'
@@ -25,8 +25,8 @@ keys = [
     Key([alt_key, 'control'], 'k', lazy.layout.grow_up()),
     Key([alt_key, 'control'], 'n', lazy.layout.normalize()),
 
-    *[Key([alt_key], g.name, lazy.group[g.name].toscreen()) for g in screens_obj.groups],
-    *[Key([alt_key, 'shift'], g.name, lazy.window.togroup(g.name, switch_group=True)) for g in screens_obj.groups],
+    *[Key([alt_key], g.name, lazy.group[g.name].toscreen()) for g in groups],
+    *[Key([alt_key, 'shift'], g.name, lazy.window.togroup(g.name, switch_group=True)) for g in groups],
 
     Key([alt_key], 'p', lazy.next_screen()),
     Key([alt_key], 'o', lazy.prev_screen()),

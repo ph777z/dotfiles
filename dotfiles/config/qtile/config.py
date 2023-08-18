@@ -4,13 +4,13 @@ from pathlib import Path
 from libqtile import hook
 
 from base import *
-from screens import screens_obj 
+from screens import groups, screens
 from keys import keys, mouse
 from layouts import layouts, floating_layout
 
 
-screens = screens_obj.screens
-groups = screens_obj.groups
+screens = screens
+groups = groups
 keys = keys
 layouts = layouts
 floating_layout = floating_layout
