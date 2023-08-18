@@ -45,6 +45,7 @@ pacman_apps=(
   'python-iwlib'
   'python-pillow'
   'python-pip'
+  'python-pynvim'
   'python-xlib'
   'qtile'
   'ranger'
@@ -59,6 +60,7 @@ pacman_apps=(
   'ttf-nerd-fonts-symbols-common'
   'ttf-nerd-fonts-symbols-mono'
   'unzip'
+  'wget'
   'wireplumber'
   'xclip'
   'xdg-desktop-portal-gtk'
@@ -124,15 +126,6 @@ config_pacman() {
     $PACMANCONF
 }
 
-config_npm() {
-  local NPMGLOBALDIR=$HOME/.npm-global
-
-  if [ ! -d $NPMGLOBALDIR ];then
-    mkdir $NPMGLOBALDIR
-  fi
-  npm config set prefix '~/.npm-global'
-}
-
 config_profile() {
   local PROFILEPATH=$HOME/.profile
 
@@ -175,5 +168,6 @@ config_pacman
 
 sudo chsh -s /bin/zsh $USER
 systemctl enable --user pipewire.service
+sudo npm install -g neovim
 
 dotbot_install
