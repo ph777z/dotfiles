@@ -101,7 +101,6 @@ class Screens:
     groups = [Group(i) for i in '12345678']
     
     def __init__(self):
-        self.__index = 0
         self.__screens: List[Screen] = [Screen(top=Bar.primary_bar())]
         for _ in range(get_num_monitors() -1):
             self.__screens.append(Screen(top=Bar.second_bar()))
@@ -109,21 +108,5 @@ class Screens:
     @property
     def screens(self) -> List[Screen]:
         return self.__screens
-
-    def next(self):
-        if self.__index < len(self.__screens):
-            self.__index += 1
-        else:
-            self.__index = 0
-        lazy.to_screen(self.__index)
-
-    def prev(self):
-        if self.__index > 0:
-            self.__index -= 1
-        else:
-            self.__index = len(self.__screens)
-
-        lazy.to_screen(self.__index)
-
 
 screens_obj = Screens()

@@ -28,8 +28,8 @@ keys = [
     *[Key([alt_key], g.name, lazy.group[g.name].toscreen()) for g in screens_obj.groups],
     *[Key([alt_key, 'shift'], g.name, lazy.window.togroup(g.name, switch_group=True)) for g in screens_obj.groups],
 
-    Key([alt_key, 'shift'], 'p', screens_obj.next()),
-    Key([alt_key, 'shift'], 'o', screens_obj.prev()),
+    Key([alt_key], 'p', lazy.next_screen()),
+    Key([alt_key], 'o', lazy.prev_screen()),
 
     Key([alt_key, 'shift'], 'r', lazy.reload_config()),
     Key([alt_key, 'shift'], 'Backspace', lazy.spawn(f'sh {Path(SCRIPTS_PATH, "powermenu.sh")}')),
