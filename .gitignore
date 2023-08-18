@@ -1,2 +1,5 @@
 __pycache__
 .venv
+**/slock/config.h
+**/slock/*.o
+**/slock/slock

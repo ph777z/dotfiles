@@ -36,10 +36,10 @@ case $option in
     if [[ $(confirm_action) -eq 0 ]];then
       loginctl terminate-session $XDG_SESSION_ID
     else
-      return
+      return 
     fi
     ;;
   $lock)
-    betterlockscreen -l
+    slock -m "Bem vindo e volta $USER <3"
     ;;
 esac

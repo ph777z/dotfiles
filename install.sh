@@ -5,10 +5,8 @@ set -e
 sudo -v
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ASSETSDIR=$BASEDIR/assets
 
 yay_apps=(
-  'betterlockscreen'
   'devour'
 )
 
@@ -75,7 +73,7 @@ pacman_apps=(
 
 yay_install() {
   local YAYDIR=$BASEDIR/yay
-  if command -v yay 1>/dev/null 2>&1; then
+  if ! command -v yay 1>/dev/null 2>&1; then
     git clone https://aur.archlinux.org/yay.git $YAYDIR\
       && cd $YAYDIR \
       && makepkg -si --noconfirm \
@@ -85,6 +83,7 @@ yay_install() {
 }
 
 config_lighdm() {
+  local BACKGROUNDSSOURCE=$BASEDIR/root/backgrounds
   local BACKGROUNDSDIR=/usr/share/backgrounds/dotfiles
   local LIGHTDMCONF=/etc/lightdm/lightdm-gtk-greeter.conf
 
@@ -92,7 +91,7 @@ config_lighdm() {
     sudo mkdir -p $BACKGROUNDSDIR
   fi
 
-  sudo cp $ASSETSDIR/wallpaper.jpg $BACKGROUNDSDIR
+  sudo cp $BACKGROUNDSSOURCE/wallpaper.jpg $BACKGROUNDSDIR
   sudo sed -i \
     -e 's/#background=/background=\/usr\/share\/backgrounds\/dotfiles\/wallpaper.jpg/g' \
     $LIGHTDMCONF
@@ -105,6 +104,17 @@ config_sudoers() {
     -e 's/# Defaults secure_path/Defaults secure_path/g' \
     -e 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g' \
     $SUDOERSCONF
+}
+
+config_slock() {
+  local SLOCKPATH=$BASEDIR/root/slock
+
+  if ! command -v slock 1>/dev/null 2>&1;then
+    cd $SLOCKPATH \
+      && sudo make install clean
+      && rm -f config.h \
+      && cd $BASEDIR
+  fi
 }
 
 config_npm() {
@@ -153,6 +163,7 @@ yay -S --needed --noconfirm $(printf " %s" "${yay_apps[@]}")
 config_lighdm
 config_sudoers
 config_profile
+config_slock
 
 sudo chsh -s /bin/zsh $USER
 systemctl enable --user pipewire.service

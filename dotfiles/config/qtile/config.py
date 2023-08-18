@@ -1,5 +1,4 @@
 import subprocess
-import threading
 from pathlib import Path
 
 from libqtile import hook
@@ -29,14 +28,7 @@ auto_minimize = True
 wl_input_rules = None
 wmname = 'LG3D'
 
-
-def betterlockscreen_setup():
-    sh = Path(SCRIPTS_PATH, 'lockscreen.sh')
-    subprocess.call([sh])   
-
 @hook.subscribe.startup_once
 def autostart():
     sh = Path(SCRIPTS_PATH, 'autostart.sh')
     subprocess.call([sh])
-    
-    threading.Thread(target=betterlockscreen_setup).start()
