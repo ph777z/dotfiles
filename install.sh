@@ -111,7 +111,7 @@ config_slock() {
 
   if ! command -v slock 1>/dev/null 2>&1;then
     cd $SLOCKPATH \
-      && sudo make install clean
+      && sudo make install clean \
       && rm -f config.h \
       && cd $BASEDIR
   fi
