@@ -33,5 +33,3 @@ QTILE_CONFIG = Path(HOME, Path('.config', 'qtile'))
 SCRIPTS_PATH = Path(QTILE_CONFIG, 'scripts')
 
 terminal = guess_terminal('kitty')
-rofi_menu = 'rofi -show drun'
-rofi_window = 'rofi -show window'

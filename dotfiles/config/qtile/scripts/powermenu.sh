@@ -1,42 +1,52 @@
 #!/bin/bash
 
+FONT="JetBrains:size=10"
+BLACK="#11111b"
+WHITE="#a6adc8"
+
 confirm_action() {
-  confirm=$(echo -e "Sim\nNao" | rofi -p "Tem certeza?" -dmenu -l 2)
+  confirm=$(echo -e "Sim\nNao" | dmenu \
+    -p "Tem certeza?" \
+    -fn $FONT \
+    -nb $BLACK \
+    -nf $WHITE \
+    -sb $WHITE \
+    -sf $BLACK)
   case $confirm in
     'Sim') echo 0 ;;
     *) echo 1 ;;
   esac
 }
 
-poweroff=" Desligar"
-reboot=" Reiniciar"
-logout="󰗼 Sair"
-lock=" Bloquear"
+poweroff="Desligar"
+reboot="Reiniciar"
+logout="Sair"
+lock="Bloquear"
 
 options="$poweroff\n$reboot\n$logout\n$lock"
 
-option=$(echo -e "$options" | rofi -p "Powermenu" -dmenu -l 4)
+
+option=$(echo -e "$options" | dmenu \
+    -fn $FONT \
+    -nb $BLACK \
+    -nf $WHITE \
+    -sb $WHITE \
+    -sf $BLACK)
 
 case $option in
   $poweroff)
     if [[ $(confirm_action) -eq 0 ]];then
       poweroff
-    else
-      return
     fi
     ;;
   $reboot)
     if [[ $(confirm_action) -eq 0 ]];then
       reboot
-    else
-      return
     fi 
     ;;
   $logout)
     if [[ $(confirm_action) -eq 0 ]];then
       loginctl terminate-session $XDG_SESSION_ID
-    else
-      return 
     fi
     ;;
   $lock)
