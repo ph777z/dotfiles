@@ -13,6 +13,7 @@ yay_apps=(
 pacman_apps=(
   'bluez'
   'btop'
+  'dmenu'
   'dunst'
   'exa'
   'fd'
@@ -50,7 +51,6 @@ pacman_apps=(
   'qtile'
   'ranger'
   'ripgrep'
-  'rofi'
   'rust'
   'starship'
   'tk'
