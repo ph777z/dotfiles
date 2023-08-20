@@ -47,7 +47,7 @@ if [ ! -f $EXECUTEDFILE ];then
   create_list_apps
 fi
 
-app=$(list_apps | dmenu \
+app=$(list_apps | dmenu -i \
     -nb '#11111b' \
     -nf '#a6adc8' \
     -sb '#a6adc8' \
