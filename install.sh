@@ -14,6 +14,7 @@ pacman_apps=(
   'bluez'
   'btop'
   'dmenu'
+  'dex'
   'dunst'
   'exa'
   'fd'
