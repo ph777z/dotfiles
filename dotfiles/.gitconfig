@@ -3,3 +3,5 @@
 	email = pedrohenrickqa@gmail.com
 [core]
 	editor = nvim
+[init]
+	defaultBranch = main
