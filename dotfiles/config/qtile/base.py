@@ -33,4 +33,3 @@ QTILE_CONFIG = Path(HOME, Path('.config', 'qtile'))
 SCRIPTS_PATH = Path(QTILE_CONFIG, 'scripts')
 
 terminal = guess_terminal('kitty')
-drun = Path(SCRIPTS_PATH, 'drun')

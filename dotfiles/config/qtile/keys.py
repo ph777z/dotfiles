@@ -4,7 +4,7 @@ from libqtile.config import Key, Click, Drag
 from libqtile.lazy import lazy
 from libqtile import extension
 
-from base import drun, theme, terminal, SCRIPTS_PATH
+from base import theme, terminal, SCRIPTS_PATH
 from screens import groups
 
 
@@ -43,7 +43,7 @@ keys = [
     Key([], 'XF86AudioRaiseVolume', lazy.spawn('pamixer --increase 5')),
     Key([], 'XF86AudioMute', lazy.spawn('pamixer --toggle-mute')),
     
-    Key([alt_key], 'Space', lazy.spawn(drun)),
+    Key([alt_key], 'Space', lazy.spawn(f' sh {Path(SCRIPTS_PATH, "drun")}')),
     Key([alt_key, 'shift'], 'Return', lazy.spawn(terminal)),
 ]
 
