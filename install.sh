@@ -8,6 +8,7 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 yay_apps=(
   'devour'
+  'betterlockscreen'
 )
 
 pacman_apps=(
@@ -109,17 +110,6 @@ config_sudoers() {
     $SUDOERSCONF
 }
 
-config_slock() {
-  local SLOCKPATH=$BASEDIR/root/slock
-
-  if ! command -v slock 1>/dev/null 2>&1;then
-    cd $SLOCKPATH \
-      && sudo make install clean \
-      && rm -f config.h \
-      && cd $BASEDIR
-  fi
-}
-
 config_pacman() {
   local PACMANCONF=/etc/pacman.conf
 
@@ -164,7 +154,6 @@ yay -S --needed --noconfirm $(printf " %s" "${yay_apps[@]}")
 config_lighdm
 config_sudoers
 config_profile
-config_slock
 config_pacman
 
 sudo chsh -s /bin/zsh $USER
