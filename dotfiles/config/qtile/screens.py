@@ -6,7 +6,7 @@ from libqtile.lazy import lazy
 from libqtile import bar, widget
 
 from base import terminal, theme, SCRIPTS_PATH
-from devides import get_num_monitors, get_wlan, get_backlight
+from devides import get_num_monitors, get_wlan, get_backlight, get_keyboard_layouts
 
 
 wlan_dev_name = get_wlan()
@@ -38,7 +38,7 @@ screens = [Screen(top=bar.Bar([
     widget.Spacer(),
     widget.Systray(icon_size=16, padding=8),
     widget.Sep(padding=15),
-    widget.KeyboardLayout(fmt='󰌌 {}', configured_keyboards=['br']),
+    widget.KeyboardLayout(fmt='󰌌 {}', configured_keyboards=get_keyboard_layouts()),
     widget.CheckUpdates(
         fmt=' {}',
         distro='Arch_checkupdates',

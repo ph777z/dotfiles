@@ -1,7 +1,11 @@
 import re
+from typing import List
 from pathlib import Path
 
+
 from Xlib import display as xdisplay
+
+from base import HOME
 
 
 def get_backlight() -> str | None:
@@ -38,7 +42,6 @@ def get_num_monitors():
     else:
         return num_monitors
 
-
 def get_wlan() -> str | None:
     net_path = Path('/sys/class/net')
 
@@ -48,3 +51,16 @@ def get_wlan() -> str | None:
             return net.name
 
     return None
+
+def get_keyboard_layouts() -> List[str]:
+    kbconfig_file = Path(HOME, '.kbconfig')
+    kbs = []
+
+    if kbconfig_file.exists():
+        with kbconfig_file.open() as f:
+            for kb in f.readlines():
+                kbs.append(kb.strip('\n'))
+    else:
+        kbs.append('br')
+
+    return kbs
