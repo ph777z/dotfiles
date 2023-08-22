@@ -33,5 +33,6 @@ floating_layout = floating.Floating(
         Match(wm_class='Pavucontrol'),
         Match(wm_class='Anydesk'),
         Match(wm_class='megasync'),
+        Match(wm_class='putty'),
     ],
 )
