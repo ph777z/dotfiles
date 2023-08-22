@@ -5,7 +5,7 @@ from libqtile.config import Group, Screen
 from libqtile.lazy import lazy
 from libqtile import bar, widget
 
-from base import terminal, theme, SCRIPTS_PATH
+from base import theme, SCRIPTS_PATH
 from devides import get_num_monitors, get_wlan, get_backlight, get_keyboard_layouts
 
 
@@ -47,11 +47,6 @@ screens = [Screen(top=bar.Bar([
         colour_have_updates=theme['white1'],
         colour_no_updates=theme['white1'],
         update_interval=60,
-        mouse_callbacks={
-            'Button1': lazy.spawn(
-                f'{terminal} {Path(SCRIPTS_PATH, "update_pkgs.sh")}'
-            )
-        }
     ),
     widget.Volume(
         fmt='󰕾 {}',
