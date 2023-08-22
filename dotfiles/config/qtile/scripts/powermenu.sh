@@ -26,7 +26,7 @@ lock="Bloquear"
 options="$poweroff\n$reboot\n$logout\n$lock"
 
 
-option=$(echo -e "$options" | dmenu \
+option=$(echo -e "$options" | dmenu -i \
     -fn $FONT \
     -nb $BLACK \
     -nf $WHITE \
