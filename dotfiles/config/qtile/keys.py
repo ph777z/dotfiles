@@ -43,7 +43,7 @@ keys = [
     Key([], 'XF86AudioRaiseVolume', lazy.spawn('pamixer --increase 5')),
     Key([], 'XF86AudioMute', lazy.spawn('pamixer --toggle-mute')),
     
-    Key([alt_key], 'Space', lazy.spawn(f' sh {Path(SCRIPTS_PATH, "drun")}')),
+    Key([alt_key], 'Space', lazy.spawn(f' sh {Path(SCRIPTS_PATH, "drun.sh")}')),
     Key([alt_key, 'shift'], 'Return', lazy.spawn(terminal)),
 ]
 
