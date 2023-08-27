@@ -50,6 +50,6 @@ case $option in
     fi
     ;;
   $lock)
-    slock -m "Bem vindo e volta $USER <3"
+    betterlockscreen -l blur
     ;;
 esac
