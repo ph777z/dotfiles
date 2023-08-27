@@ -5,6 +5,7 @@ set -e
 sudo -v
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LOGFILE='dotfiles.log'
 
 yay_apps=(
   'devour'
@@ -144,20 +145,23 @@ dotbot_install() {
   "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 }
 
+main() {
+  yay_install
 
-yay_install
+  sudo pacman -Sy
+  sudo pacman -S --needed --noconfirm $(printf " %s" "${pacman_apps[@]}")
+  yay -S --needed --noconfirm $(printf " %s" "${yay_apps[@]}")
 
-sudo pacman -Sy
-sudo pacman -S --needed --noconfirm $(printf " %s" "${pacman_apps[@]}")
-yay -S --needed --noconfirm $(printf " %s" "${yay_apps[@]}")
+  config_lighdm
+  config_sudoers
+  config_profile
+  config_pacman
 
-config_lighdm
-config_sudoers
-config_profile
-config_pacman
+  sudo chsh -s /bin/zsh $USER
+  systemctl enable --user pipewire.service
+  sudo npm install -g neovim
 
-sudo chsh -s /bin/zsh $USER
-systemctl enable --user pipewire.service
-sudo npm install -g neovim
+  dotbot_install
+}
 
-dotbot_install
+main | tee -a $LOGFILE
