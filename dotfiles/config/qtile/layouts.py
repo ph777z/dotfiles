@@ -28,11 +28,11 @@ floating_layout = floating.Floating(
         Match(title='branchdialog'),  # gitk
         Match(title='pinentry'),  # GPG key password entry
         # customs
-        Match(title='Salvar como'),
+        Match(wm_type='dialog'),
         Match(title='Discord Updater'),
+        Match(title='Picture-in-Picture'),
         Match(wm_class='Pavucontrol'),
-        Match(wm_class='Anydesk'),
-        Match(wm_class='megasync'),
         Match(wm_class='putty'),
+        Match(wm_class='anydesk', func=lambda c: not bool(c.match(Match(title='AnyDesk')))),
     ],
 )
