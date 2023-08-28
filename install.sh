@@ -15,7 +15,6 @@ yay_apps=(
 pacman_apps=(
   'bluez'
   'btop'
-  'dmenu'
   'dex'
   'dunst'
   'exa'
@@ -38,6 +37,7 @@ pacman_apps=(
   'openssh'
   'pacman-contrib'
   'pamixer'
+  'papirus-icon-theme'
   'pavucontrol'
   'picom'
   'pipewire'
@@ -54,6 +54,7 @@ pacman_apps=(
   'qtile'
   'ranger'
   'ripgrep'
+  'rofi'
   'rust'
   'starship'
   'tk'

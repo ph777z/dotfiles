@@ -5,13 +5,7 @@ BLACK="#11111b"
 WHITE="#a6adc8"
 
 confirm_action() {
-  confirm=$(echo -e "Sim\nNao" | dmenu \
-    -p "Tem certeza?" \
-    -fn $FONT \
-    -nb $BLACK \
-    -nf $WHITE \
-    -sb $WHITE \
-    -sf $BLACK)
+  confirm=$(echo -e "Sim\nNao" | rofi -dmenu -theme dmenu -p "Tem certeza?" -l 2 -i)
   case $confirm in
     'Sim') echo 0 ;;
     *) echo 1 ;;
@@ -26,12 +20,7 @@ lock="Bloquear"
 options="$poweroff\n$reboot\n$logout\n$lock"
 
 
-option=$(echo -e "$options" | dmenu -i \
-    -fn $FONT \
-    -nb $BLACK \
-    -nf $WHITE \
-    -sb $WHITE \
-    -sf $BLACK)
+option=$(echo -e "$options" | rofi -dmenu -theme dmenu -p "Powermenu:" -l 4 -i)
 
 case $option in
   $poweroff)

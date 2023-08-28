@@ -1,0 +1,18 @@
+@import "catppuccin-minimal"
+
+configuration {
+  show-icons: false;
+}
+
+inputbar {
+  spacing: 5px;
+  children: [ prompt, entry ];
+}
+
+prompt {
+  background-color: inherit;
+}
+
+entry {
+    placeholder: "";
+}
