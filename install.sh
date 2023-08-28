@@ -13,6 +13,7 @@ yay_apps=(
 )
 
 pacman_apps=(
+  'alacritty'
   'bluez'
   'btop'
   'dex'
@@ -63,6 +64,7 @@ pacman_apps=(
   'ttf-nerd-fonts-symbols'
   'ttf-nerd-fonts-symbols-common'
   'ttf-nerd-fonts-symbols-mono'
+  'ueberzug'
   'unzip'
   'wget'
   'wireplumber'
@@ -130,7 +132,7 @@ config_profile() {
   if [ ! -f $PROFILEPATH ];then
     touch $PROFILEPATH
   fi
-  insert_in_profile "export TERMINAL=kitty"
+  insert_in_profile "export TERMINAL=alacritty"
   insert_in_profile "export EDITOR=nvim"
 }
 
