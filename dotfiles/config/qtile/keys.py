@@ -43,7 +43,7 @@ keys = [
     Key([], 'XF86AudioMute', lazy.spawn('pamixer --toggle-mute')),
     
     Key([alt_key], 'Space', lazy.spawn('rofi -show drun')),
-    Key([alt_key], 'Tab', lazy.spawn('rofi -show windo ')),
+    Key([alt_key], 'Tab', lazy.spawn('rofi -show window')),
     Key([alt_key, 'shift'], 'Return', lazy.spawn(terminal)),
 ]
 
