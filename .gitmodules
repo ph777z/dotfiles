@@ -18,3 +18,7 @@
 [submodule "dotfiles/config/zsh/asdf"]
 	path = dotfiles/config/zsh/asdf
 	url = https://github.com/asdf-vm/asdf.git
+
+[submodule "dotfiles/config/ranger/plugins/ranger_devicons"]
+	path = dotfiles/config/ranger/plugins/ranger_devicons
+	url = https://github.com/alexanderjeurissen/ranger_devicons.git
