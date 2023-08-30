@@ -16,7 +16,6 @@ pacman_apps=(
   'alacritty'
   'bluez'
   'btop'
-  'dex'
   'dunst'
   'exa'
   'fd'
@@ -70,6 +69,7 @@ pacman_apps=(
   'wireplumber'
   'xclip'
   'xdg-desktop-portal-gtk'
+  'xdg-user-dirs'
   'xorg-apps'
   'xorg-server'
   'zathura'
@@ -160,6 +160,7 @@ main() {
   config_profile
   config_pacman
 
+  xdg-user-dirs-update
   sudo chsh -s /bin/zsh $USER
   systemctl enable --user pipewire.service
   sudo npm install -g neovim
