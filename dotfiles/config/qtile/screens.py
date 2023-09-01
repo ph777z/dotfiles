@@ -1,19 +1,43 @@
-from os import getenv
 from pathlib import Path
 
 from libqtile.config import Group, Screen
 from libqtile.lazy import lazy
 from libqtile import bar, widget
 
-from base import theme, SCRIPTS_PATH
+from base import terminal, theme, SCRIPTS_PATH
+from widgets import Backlight
 from devides import get_num_monitors, get_wlan, get_backlight, get_keyboard_layouts
 
 
-wlan_dev_name = get_wlan()
-hci0_dev = getenv('QTILE_BLUEZ_DEV', None)
-backlight_file = get_backlight()
-
 groups = [Group(i) for i in '12345678']
+
+def relative_widgets():
+    wlan_dev_name = get_wlan()
+    backlight_file = get_backlight()
+    widgets = []
+
+    if backlight_file:
+        widgets.append(
+            Backlight(
+                fmt='󰃟 {}',
+                backlight_name=backlight_file,
+                scroll=False,
+            )
+        )
+    if wlan_dev_name:
+        widgets.append(
+            widget.Wlan(
+                interface=wlan_dev_name,
+                format='󰖩 {essid}',
+                disconnected_message='󰖪 off',
+                max_chars=10,
+                mouse_callbacks={
+                    'Button1': lazy.spawn(f'{terminal} -e nmtui')
+                }
+            )
+        )
+    return widgets
+
 
 screens = [Screen(top=bar.Bar([
     widget.GroupBox(
@@ -48,9 +72,9 @@ screens = [Screen(top=bar.Bar([
         colour_no_updates=theme['white1'],
         update_interval=60,
     ),
+    *relative_widgets(),
     widget.Volume(
         fmt='󰕾 {}',
-        scroll=True,
         update_interval=0.1,
         get_volume_command=Path(SCRIPTS_PATH, 'get_volume.sh'),
         volume_up_command='pamixer --increase 1',
@@ -68,9 +92,7 @@ screens = [Screen(top=bar.Bar([
         foreground=theme['black1'],
         margin = 5,
         mouse_callbacks={
-            'Button1': lazy.spawn(
-                f'sh {Path(SCRIPTS_PATH, "powermenu.sh")}'
-            )
+            'Button1': lazy.spawn(f'{Path(SCRIPTS_PATH, "powermenu.sh")}')
         }
     )
 ], 20))]
