@@ -33,6 +33,8 @@ floating_layout = floating.Floating(
         Match(title='Picture-in-Picture'),
         Match(wm_class='Pavucontrol'),
         Match(wm_class='putty'),
+        Match(wm_class='blueman-services'),
+        Match(wm_class='blueman-applet'),
         Match(wm_class='anydesk', func=lambda c: not bool(c.match(Match(title='AnyDesk')))),
     ],
 )
