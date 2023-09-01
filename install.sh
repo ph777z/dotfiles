@@ -16,6 +16,7 @@ pacman_apps=(
   'alacritty'
   'bluez'
   'btop'
+  'blueman'
   'dunst'
   'exa'
   'fd'
@@ -163,6 +164,7 @@ main() {
   xdg-user-dirs-update
   sudo chsh -s /bin/zsh $USER
   systemctl enable --user pipewire.service
+  sudo systemctl enable bluetooth.service
   sudo npm install -g neovim
 
   dotbot_install

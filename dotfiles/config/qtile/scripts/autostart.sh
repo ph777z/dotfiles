@@ -12,3 +12,4 @@ fi
 
 # autostart apps
 picom -f & 
+blueman-applet &
