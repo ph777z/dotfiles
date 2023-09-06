@@ -171,7 +171,7 @@ main() {
   dotbot_install
 
   bat cache --build
-  sudo assets/icons/install -d /usr/share/icons standard
+  sudo assets/icons/install.sh -d /usr/share/icons standard
 }
 
 main | tee -a $LOGFILE
