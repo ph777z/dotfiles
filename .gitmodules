@@ -22,3 +22,7 @@
 [submodule "dotfiles/config/ranger/plugins/ranger_devicons"]
 	path = dotfiles/config/ranger/plugins/ranger_devicons
 	url = https://github.com/alexanderjeurissen/ranger_devicons.git
+
+[submodule "assets/icons"]
+	path = assets/icons
+	url = https://github.com/vinceliuice/Tela-icon-theme.git

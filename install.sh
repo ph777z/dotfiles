@@ -40,7 +40,6 @@ pacman_apps=(
   'openssh'
   'pacman-contrib'
   'pamixer'
-  'papirus-icon-theme'
   'pavucontrol'
   'picom'
   'pipewire'
@@ -94,7 +93,7 @@ yay_install() {
 }
 
 config_lighdm() {
-  local BACKGROUNDSSOURCE=$BASEDIR/root/backgrounds
+  local BACKGROUNDSSOURCE=$BASEDIR/assets/backgrounds
   local BACKGROUNDSDIR=/usr/share/backgrounds/dotfiles
   local LIGHTDMCONF=/etc/lightdm/lightdm-gtk-greeter.conf
 
@@ -172,6 +171,7 @@ main() {
   dotbot_install
 
   bat cache --build
+  sudo assets/icons/install -d /usr/share/icons standard
 }
 
 main | tee -a $LOGFILE
