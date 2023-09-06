@@ -133,7 +133,7 @@ config_profile() {
   if [ ! -f $PROFILEPATH ];then
     touch $PROFILEPATH
   fi
-  insert_in_profile "export TERMINAL=alacritty"
+  insert_in_profile "export TERMINAL=kitty"
   insert_in_profile "export EDITOR=nvim"
 }
 
