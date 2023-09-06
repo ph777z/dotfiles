@@ -19,3 +19,5 @@ setopt HIST_IGNORE_ALL_DUPS
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+
+export BAT_THEME="Catppuccin-mocha"

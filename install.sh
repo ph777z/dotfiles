@@ -14,6 +14,7 @@ yay_apps=(
 
 pacman_apps=(
   'alacritty'
+  'bat'
   'bluez'
   'btop'
   'blueman'
@@ -168,6 +169,8 @@ main() {
   sudo npm install -g neovim
 
   dotbot_install
+
+  bat cache --build
 }
 
 main | tee -a $LOGFILE
