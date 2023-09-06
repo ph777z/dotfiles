@@ -10,6 +10,7 @@ LOGFILE='dotfiles.log'
 yay_apps=(
   'devour'
   'betterlockscreen'
+  'catppuccin-gtk-theme-mocha'
 )
 
 pacman_apps=(
