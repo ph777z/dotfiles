@@ -3,4 +3,5 @@ __pycache__
 **/slock/config.h
 **/slock/*.o
 **/slock/slock
+**/lazygit/state.yml
 *.log
