@@ -38,17 +38,16 @@ def relative_widgets():
         )
     return widgets
 
-
-screens = [Screen(top=bar.Bar([
-    widget.GroupBox(
+def create_groupbox():
+    return widget.GroupBox(
         active=theme['white1'],
         inactive=theme['black2'],
-        highlight_method='block',
-        block_highlight_text_color=theme['black1'],
+        highlight_method='line',
+        highlight_color=[theme['black1']],
         this_current_screen_border=theme['white2'],
-        this_screen_border=theme['white2'],
-        other_current_screen_border=theme['black2'],
-        other_screen_border=theme['black2'],
+        this_screen_border=theme['black2'],
+        other_current_screen_border=theme['black1'],
+        other_screen_border=theme['black1'],
         urgent_alert_method='text',
         urgent_text=theme['red1'],
         urgent_border=theme['red1'],
@@ -56,7 +55,11 @@ screens = [Screen(top=bar.Bar([
         rounded=True,
         disable_drag=True,
         borderwidth=2
-    ),
+    )
+
+
+screens = [Screen(top=bar.Bar([
+    create_groupbox(),
     widget.Sep(foreground=theme['black1'], padding=0),
     widget.WindowName(format='{name}', width=200),
     widget.Spacer(),
@@ -99,4 +102,4 @@ screens = [Screen(top=bar.Bar([
 
 
 for _ in range(get_num_monitors() -1):
-    screens.append(Screen())
+    screens.append(Screen(top=bar.Bar([create_groupbox(), widget.Spacer()], 20)))
