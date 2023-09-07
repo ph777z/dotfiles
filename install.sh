@@ -54,6 +54,8 @@ pacman_apps=(
   'python-pynvim'
   'python-xlib'
   'qtile'
+  'qt5ct'
+  'qt6ct'
   'ranger'
   'ripgrep'
   'rofi'
@@ -136,6 +138,7 @@ config_profile() {
   fi
   insert_in_profile "export TERMINAL=kitty"
   insert_in_profile "export EDITOR=nvim"
+  insert_in_profile 'export QT_QPA_PLATFORMTHEME="qt5ct"'
 }
 
 dotbot_install() {
