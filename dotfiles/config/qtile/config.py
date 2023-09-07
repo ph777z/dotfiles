@@ -31,7 +31,7 @@ wmname = 'LG3D'
 
 def betterlockscreen_setup():
     sh = Path(SCRIPTS_PATH, 'lockscreen_setup.sh')
-    subprocess.call([terminal, sh])  
+    subprocess.call([sh])  
 
 @hook.subscribe.startup_complete
 def lockscreen():
