@@ -150,6 +150,14 @@ dotbot_install() {
   "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 }
 
+icons_install() {
+  local ICONS_PATH=/usr/share/icons
+
+  if ! $(ls $ICONS_PATH | grep -q Tela-dark);then
+    sudo assets/icons/install.sh -d $ICONS_PATH standard
+  fi
+}
+
 main() {
   yay_install
 
@@ -169,9 +177,9 @@ main() {
   sudo npm install -g neovim
 
   dotbot_install
+  icons_install
 
   bat cache --build
-  sudo assets/icons/install.sh -d /usr/share/icons standard
 }
 
 main | tee -a $LOGFILE
