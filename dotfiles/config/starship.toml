@@ -1,8 +1,10 @@
 add_newline = false
 palette = "catppuccin_mocha"
 
-format = '$username$directory$all$character'
+format = '$directory$all$character'
 right_format = '$time'
+
+command_timeout = 1000
 
 [character]
 success_symbol = "[&](blue)"
@@ -33,6 +35,7 @@ truncation_length = 8
 truncation_symbol = '…/'
 
 [username]
+disabled = true
 style_root = 'boold yellow'
 style_user = 'bold green'
 format = '[$user]($style)@ '
