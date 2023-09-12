@@ -11,6 +11,7 @@ yay_apps=(
   'devour'
   'betterlockscreen'
   'catppuccin-gtk-theme-mocha'
+  'visual-studio-code-bin'
 )
 
 pacman_apps=(
@@ -20,12 +21,13 @@ pacman_apps=(
   'btop'
   'blueman'
   'dunst'
-  'exa'
+  'eza'
   'fd'
   'feh'
   'firefox'
   'flatpak'
   'fzf'
+  'gnome-keyring'
   'kitty'
   'lazygit'
   'lightdm'
