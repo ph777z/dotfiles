@@ -5,3 +5,5 @@ __pycache__
 **/slock/slock
 **/lazygit/state.yml
 *.log
+**/qutebrowser/*
+!**/qutebrowser/config.py

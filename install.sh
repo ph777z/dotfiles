@@ -58,6 +58,7 @@ pacman_apps=(
   'qtile'
   'qt5ct'
   'qt6ct'
+  'qutebrowser'
   'ranger'
   'ripgrep'
   'rofi'
