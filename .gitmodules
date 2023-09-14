@@ -26,3 +26,7 @@
 [submodule "assets/icons"]
 	path = assets/icons
 	url = https://github.com/vinceliuice/Tela-icon-theme.git
+
+[submodule "dotfiles/firefox/chrome"]
+	path = dotfiles/firefox/chrome
+	url = https://codeberg.org/Freeplay/Firefox-Onebar.git

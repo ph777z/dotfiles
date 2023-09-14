@@ -2,6 +2,9 @@
     ~/.config: 
       glob: true
       path: dotfiles/config/*
+    ~/.mozilla/firefox/dot.profile:
+      path: dotfiles/firefox
+      create: true
     ~/.zshrc: dotfiles/.zshrc
     ~/.gitconfig: dotfiles/.gitconfig
     ~/.tmux.conf: dotfiles/.tmux.conf
