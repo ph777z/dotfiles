@@ -156,6 +156,15 @@ dotbot_install() {
   "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 }
 
+tmux_config() {
+  local TPM_PATH=$HOME/.tmux/plugins/tpm
+
+  if [ ! -d $TPM_PATH ];then
+    git clone https://github.com/tmux-plugins/tpm $TPM_PATH\
+      && $TPM_PATH/bin/install_plugins
+  fi
+}
+
 icons_install() {
   local ICONS_PATH=/usr/share/icons
 
@@ -183,6 +192,7 @@ main() {
   sudo npm install -g neovim
 
   dotbot_install
+  tmux_config
   icons_install
 
   bat cache --build
