@@ -4,7 +4,7 @@ palette = "catppuccin_mocha"
 format = '$directory$all$character'
 right_format = '$time'
 
-command_timeout = 1000
+command_timeout = 1500
 
 [character]
 success_symbol = "[&](blue)"
