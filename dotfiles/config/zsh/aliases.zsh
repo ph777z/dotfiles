@@ -5,6 +5,7 @@ alias la="exa -a"
 alias lla="exa -la"
 alias tree="exa -T"
 alias rm="rm -r"
+alias vim="nvim -u ~/.config/nvim/basic/init.vim"
 
 alias mpv="devour mpv"
 alias zathura="devour zathura"

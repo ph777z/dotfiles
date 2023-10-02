@@ -3,10 +3,6 @@
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
 
-[submodule "dotfiles/config/nvim"]
-	path = dotfiles/config/nvim
-	url = https://github.com/pedrohenrick777/configs.nvim.git
-
 [submodule "dotfiles/config/zsh/syntax-highlighting"]
 	path = dotfiles/config/zsh/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git

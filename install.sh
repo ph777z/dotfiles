@@ -165,6 +165,12 @@ tmux_config() {
   fi
 }
 
+neovim_config() {
+  local NEOVIM_CONFIG_PATH=$HOME/.config/nvim
+
+  git clone https://github.com/pedrohenrick777/configs.nvim.git $NEOVIM_CONFIG_PATH
+}
+
 icons_install() {
   local ICONS_PATH=/usr/share/icons
 
@@ -193,6 +199,7 @@ main() {
 
   dotbot_install
   tmux_config
+  neovim_config
   icons_install
 
   bat cache --build
