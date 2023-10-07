@@ -66,7 +66,7 @@ pacman_apps=(
   'starship'
   'tk'
   'tmux'
-  'ttf-jetbrains-mono'
+  'ttf-jetbrains-mono-nerd'
   'ttf-nerd-fonts-symbols'
   'ttf-nerd-fonts-symbols-common'
   'ttf-nerd-fonts-symbols-mono'
