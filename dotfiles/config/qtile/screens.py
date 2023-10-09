@@ -79,7 +79,7 @@ screens = [Screen(top=bar.Bar([
     widget.Volume(
         fmt='󰕾 {}',
         update_interval=0.1,
-        get_volume_command=Path(SCRIPTS_PATH, 'get_volume.sh'),
+        get_volume_command='pamixer --get-volume-human',
         volume_up_command='pamixer --increase 1',
         volume_down_command='pamixer --decrease 1',
         mouse_callbacks={
