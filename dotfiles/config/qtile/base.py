@@ -19,7 +19,7 @@ theme = {
 }
 
 widget_defaults = dict(
-    font='JetBrains Mono',
+    font='JetBrainsMono Nerd Font',
     background=theme['black1'] ,
     foreground=theme['white1'],
     fontsize=13,
