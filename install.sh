@@ -168,7 +168,9 @@ tmux_config() {
 neovim_config() {
   local NEOVIM_CONFIG_PATH=$HOME/.config/nvim
 
-  git clone https://github.com/pedrohenrick777/configs.nvim.git $NEOVIM_CONFIG_PATH
+  if [ ! -d $NEOVIM_CONFIG_PATH ];then
+    git clone https://github.com/pedrohenrick777/configs.nvim.git $NEOVIM_CONFIG_PATH
+  fi
 }
 
 icons_install() {
