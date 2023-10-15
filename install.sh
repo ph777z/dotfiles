@@ -113,6 +113,21 @@ config_lighdm() {
   sudo systemctl enable lightdm.service
 }
 
+config_xorg() {
+  local XORGCONF=/etc/X11/xorg.conf
+
+  if [ ! -f $XORGCONF ];then
+    sudo touch $XORGCONF
+  fi
+
+  insert_in() {
+    grep -qzoP $1 $XORGCONF || echo -e $2 | sudo tee -a $XORGCONF 1>/dev/null;
+  }
+
+  insert_in "Section.*ServerFlags.*\n.*DontVTSwitch.*true.*\nEndSection" \
+    'Section "ServerFlags"\n  DontVTSwitch "true"\nEndSection'
+}
+
 config_sudoers() {
   local SUDOERSCONF=/etc/sudoers
   sudo sed -i \
@@ -192,6 +207,7 @@ main() {
   config_sudoers
   config_profile
   config_pacman
+  config_xorg
 
   xdg-user-dirs-update
   sudo chsh -s /bin/zsh $USER
