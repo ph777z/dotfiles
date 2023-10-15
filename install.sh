@@ -9,7 +9,6 @@ LOGFILE='dotfiles.log'
 
 yay_apps=(
   'devour'
-  'betterlockscreen'
   'catppuccin-gtk-theme-mocha'
   'visual-studio-code-bin'
 )
@@ -63,6 +62,7 @@ pacman_apps=(
   'ripgrep'
   'rofi'
   'rust'
+  'slock'
   'starship'
   'tk'
   'tmux'

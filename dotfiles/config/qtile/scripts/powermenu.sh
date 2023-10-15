@@ -39,6 +39,6 @@ case $option in
     fi
     ;;
   $lock)
-    betterlockscreen -l blur
+    slock
     ;;
 esac
