@@ -121,7 +121,7 @@ config_xorg() {
   fi
 
   insert_in() {
-    grep -qzoP $1 $XORGCONF || echo -e $2 | sudo tee -a $XORGCONF 1>/dev/null;
+    grep -qzoP $1 $XORGCONF || echo -e $2 | sudo tee -a $XORGCONF 1>/dev/null
   }
 
   insert_in "Section.*ServerFlags.*\n.*DontVTSwitch.*true.*\nEndSection" \
