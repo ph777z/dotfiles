@@ -125,7 +125,7 @@ config_xorg() {
   }
 
   insert_in "Section.*ServerFlags.*\n.*DontVTSwitch.*true.*\nEndSection" \
-    'Section "ServerFlags"\n  DontVTSwitch "true"\nEndSection'
+    'Section "ServerFlags"\n\tOption "DontVTSwitch" "true"\nEndSection'
 }
 
 config_sudoers() {
