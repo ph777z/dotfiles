@@ -14,7 +14,6 @@ yay_apps=(
 )
 
 pacman_apps=(
-  'alacritty'
   'bat'
   'bluez'
   'btop'
@@ -57,7 +56,6 @@ pacman_apps=(
   'qtile'
   'qt5ct'
   'qt6ct'
-  'qutebrowser'
   'ranger'
   'ripgrep'
   'rofi'
