@@ -9,7 +9,11 @@ from widgets import Backlight
 from devides import get_num_monitors, get_wlan, get_backlight, get_keyboard_layouts
 
 
-groups = [Group(i) for i in '12345678']
+groups = [
+    Group(i, label=j)
+    for i,j in 
+    (('1','一'),('2','二'),('3','三'),('4','四'),('5','五'),('6','六'), ('7','七'),('8','八'))
+]
 
 def relative_widgets():
     wlan_dev_name = get_wlan()
