@@ -190,6 +190,18 @@ icons_install() {
   fi
 }
 
+ranger_config() {
+  local RANGER_PLUGINS_PATH=$HOME/.config/ranger/plugins
+
+  ranger_plugin_install() {
+    if [ ! -d $RANGER_PLUGINS_PATH/$2 ];then
+      git clone $1 "${RANGER_PLUGINS_PATH}/${2}"
+    fi
+  }
+
+  ranger_plugin_install "https://github.com/alexanderjeurissen/ranger_devicons" "ranger_devicons"
+}
+
 main() {
   yay_install
 
@@ -213,6 +225,7 @@ main() {
   tmux_config
   neovim_config
   icons_install
+  ranger_config
 
   bat cache --build
 }

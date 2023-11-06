@@ -10,3 +10,4 @@ __pycache__
 **/firefox/*
 !**/firefox/user.js
 !**/firefox/chrome
+**/ranger/plugins/*
