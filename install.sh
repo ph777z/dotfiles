@@ -101,6 +101,8 @@ config_lighdm() {
   sudo cp $BACKGROUNDSSOURCE/wallpaper.jpg $BACKGROUNDSDIR
   sudo sed -i \
     -e 's/#background=/background=\/usr\/share\/backgrounds\/dotfiles\/wallpaper.jpg/g' \
+    -e 's/#theme-name=/theme-name=Catppuccin-Mocha-Standard-Sky-Dark/g' \
+    -e 's/#font-name=/font-name=JetBrainsMono Nerd Font/g' \
     $LIGHTDMCONF
   sudo systemctl enable lightdm.service
 }
@@ -146,7 +148,7 @@ config_profile() {
   if [ ! -f $PROFILEPATH ];then
     touch $PROFILEPATH
   fi
-  insert_in_profile "export TERMINAL=kitty"
+  insert_in_profile "export TERMINAL=alacritty"
   insert_in_profile "export EDITOR=nvim"
   insert_in_profile 'export QT_QPA_PLATFORMTHEME="qt5ct"'
 }

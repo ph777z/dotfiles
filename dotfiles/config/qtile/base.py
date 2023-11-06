@@ -32,4 +32,4 @@ HOME = Path.home()
 QTILE_CONFIG = Path(HOME, Path('.config', 'qtile'))
 SCRIPTS_PATH = Path(QTILE_CONFIG, 'scripts')
 
-terminal = guess_terminal('kitty')
+terminal = guess_terminal()
