@@ -11,3 +11,4 @@ __pycache__
 !**/firefox/user.js
 !**/firefox/chrome
 **/ranger/plugins/*
+assets/icons

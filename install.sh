@@ -184,8 +184,14 @@ neovim_config() {
 
 icons_install() {
   local ICONS_PATH=/usr/share/icons
+  local ICONS_VERSION=2023-06-25
 
   if ! $(ls $ICONS_PATH | grep -q Tela-dark);then
+
+    if [ ! -d $BASEDIR/assets/icons ];then
+      git clone https://github.com/vinceliuice/Tela-icon-theme.git $BASEDIR/assets/icons --branch $ICONS_VERSION
+    fi
+
     sudo assets/icons/install.sh -d $ICONS_PATH standard
   fi
 }
