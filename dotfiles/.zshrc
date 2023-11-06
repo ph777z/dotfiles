@@ -1,13 +1,34 @@
 ZSH_CONFIG=$HOME/.config/zsh
-ASDF_PATH=$ZSH_CONFIG/asdf
 
-source $ZSH_CONFIG/autosuggetions/zsh-autosuggestions.zsh
-source $ZSH_CONFIG/syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_CONFIG/aliases.zsh
 source $ZSH_CONFIG/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
+zsh_plugins_install() {
+    local PLUGIN_PATH=$ZSH_CONFIG/plugins/$1
+
+    if [ ! -d $PLUGIN_PATH ];then
+        echo "Instalando ${1}..."
+        git clone $2 $PLUGIN_PATH
+    fi
+
+    source $PLUGIN_PATH
+}
+
+zsh_plugins_install "zsh-syntax-highlighting" "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+zsh_plugins_install "zsh-autosuggestions" "https://github.com/zsh-users/zsh-autosuggestions"
+
+
+ASDF_PATH=$HOME/.asdf
+ASDF_VERSION=v0.13.1
+
+if [ ! -d $ASDF_PATH ];then
+    echo "Instalando ASDF...\n"
+    git clone https://github.com/asdf-vm/asdf.git $ASDF_PATH --branch $ASDF_VERSION
+fi
+
 . $ASDF_PATH/asdf.sh
 fpath=(${ASDF_PATH}/completions $fpath)
+
 
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'

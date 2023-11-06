@@ -12,3 +12,4 @@ __pycache__
 !**/firefox/chrome
 **/ranger/plugins/*
 assets/icons
+**/zsh/plugins/*
