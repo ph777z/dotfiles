@@ -10,7 +10,6 @@ LOGFILE='dotfiles.log'
 yay_apps=(
   'devour'
   'catppuccin-gtk-theme-mocha'
-  'visual-studio-code-bin'
 )
 
 pacman_apps=(
@@ -26,7 +25,6 @@ pacman_apps=(
   'flatpak'
   'fzf'
   'gnome-keyring'
-  'kitty'
   'lazygit'
   'lightdm'
   'lightdm-gtk-greeter'
