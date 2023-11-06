@@ -14,12 +14,8 @@ cd .dotfiles
 
 ## Configuração do firefox
 
-Acesar `about:profiles` no firerox, criar um profile em `~/.mozila/firefox/dot.profile` e o tornar Padrão.
+Instalar o tema [Firefox-OneBar](https://codeberg.org/Freeplay/Firefox-Onebar.git)
 
-## Fix: Sincronização do vscode
+## Configurando o teclado pelo qtile
 
-Adicione a seguinte linha em `~/.vscode/argv.json`:
-
-```json
-"password-store": "gnome"
-```
+Adicione o formato de teclado desejado em `~/.kbconfig`

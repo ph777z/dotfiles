@@ -2,7 +2,3 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-
-[submodule "dotfiles/firefox/chrome"]
-	path = dotfiles/firefox/chrome
-	url = https://codeberg.org/Freeplay/Firefox-Onebar.git
