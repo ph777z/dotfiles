@@ -14,7 +14,13 @@ cd .dotfiles
 
 ## Configuração do firefox
 
-Instalar o tema [Firefox-OneBar](https://codeberg.org/Freeplay/Firefox-Onebar.git)
+- É preciso iniciar o firefox ao menos 1 vez para que isto funcione.
+- O script instalará as configurações apenas no usuário padrão do firefox
+
+```bash
+cd firefox
+./install.sh
+```
 
 ## Configurando o teclado pelo qtile
 

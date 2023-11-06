@@ -7,9 +7,6 @@ __pycache__
 *.log
 **/qutebrowser/*
 !**/qutebrowser/config.py
-**/firefox/*
-!**/firefox/user.js
-!**/firefox/chrome
 **/ranger/plugins/*
 assets/icons
 **/zsh/plugins/*
