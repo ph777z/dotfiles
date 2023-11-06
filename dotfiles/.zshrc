@@ -3,19 +3,21 @@ ZSH_CONFIG=$HOME/.config/zsh
 source $ZSH_CONFIG/aliases.zsh
 source $ZSH_CONFIG/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
-zsh_plugins_install() {
-    local PLUGIN_PATH=$ZSH_CONFIG/plugins/$1
 
-    if [ ! -d $PLUGIN_PATH ];then
-        echo "Instalando ${1}..."
-        git clone $2 $PLUGIN_PATH
-    fi
+PLUGINS_PATH=$ZSH_CONFIG/plugins
 
-    source $PLUGIN_PATH
-}
+if [ ! -d $PLUGINS_PATH/zsh-syntax-highlighting ];then
+  echo "Instalando zsh-syntax-highlighting...\n"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGINS_PATH/zsh-syntax-highlighting \
+    --branch 0.8.0-alpha1-pre-redrawhook
+fi
+source "${PLUGINS_PATH}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-zsh_plugins_install "zsh-syntax-highlighting" "https://github.com/zsh-users/zsh-syntax-highlighting.git"
-zsh_plugins_install "zsh-autosuggestions" "https://github.com/zsh-users/zsh-autosuggestions"
+if [ ! -d $PLUGINS_PATH/zsh-autosuggestions ];then
+  echo "Instalando zsh-autosuggestions...\n"
+  git clone https://github.com/zsh-users/zsh-autosuggestions $PLUGINS_PATH/zsh-autosuggestions
+fi
+source "${PLUGINS_PATH}/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 
 ASDF_PATH=$HOME/.asdf
