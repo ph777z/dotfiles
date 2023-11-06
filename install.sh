@@ -24,7 +24,6 @@ pacman_apps=(
   'firefox'
   'flatpak'
   'fzf'
-  'gnome-keyring'
   'lazygit'
   'lightdm'
   'lightdm-gtk-greeter'
