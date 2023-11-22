@@ -10,6 +10,7 @@ LOGFILE='dotfiles.log'
 yay_apps=(
   'devour'
   'catppuccin-gtk-theme-mocha'
+  'wishlist-bin'
 )
 
 pacman_apps=(
@@ -63,6 +64,9 @@ pacman_apps=(
   'ttf-jetbrains-mono-nerd'
   'ueberzug'
   'unzip'
+  'vagrant'
+  'virtualbox'
+  'virtualbox-host-modules-arch'
   'wget'
   'wireplumber'
   'xclip'
@@ -224,6 +228,7 @@ main() {
   sudo chsh -s /bin/zsh $USER
   systemctl enable --user pipewire.service
   sudo systemctl enable bluetooth.service
+  sudo modprobe vboxdrv
   sudo npm install -g neovim
 
   dotbot_install
