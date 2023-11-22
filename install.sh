@@ -44,6 +44,7 @@ pacman_apps=(
   'pipewire-alsa'
   'pipewire-jack'
   'pipewire-pulse'
+  'plocate'
   'python'
   'python-dbus-next'
   'python-iwlib'
