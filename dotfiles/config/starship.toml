@@ -53,6 +53,9 @@ disabled = true
 [package]
 disabled = true
 
+[vagrant]
+style = 'blue'
+
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"
