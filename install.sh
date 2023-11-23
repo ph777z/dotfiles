@@ -10,7 +10,6 @@ LOGFILE='dotfiles.log'
 yay_apps=(
   'devour'
   'catppuccin-gtk-theme-mocha'
-  'wishlist-bin'
 )
 
 pacman_apps=(
@@ -58,6 +57,7 @@ pacman_apps=(
   'ranger'
   'ripgrep'
   'rofi'
+  'skate'
   'slock'
   'starship'
   'tk'
@@ -184,6 +184,8 @@ neovim_config() {
   if [ ! -d $NEOVIM_CONFIG_PATH ];then
     git clone https://github.com/pedrohenrick777/configs.nvim.git $NEOVIM_CONFIG_PATH
   fi
+
+  sudo npm install -g neovim
 }
 
 icons_install() {
@@ -230,7 +232,7 @@ main() {
   systemctl enable --user pipewire.service
   sudo systemctl enable bluetooth.service
   sudo modprobe vboxdrv
-  sudo npm install -g neovim
+  sudo updatedb
 
   dotbot_install
   tmux_config
