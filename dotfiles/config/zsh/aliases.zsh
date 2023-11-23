@@ -18,3 +18,7 @@ venv() {
 
   source ./.venv/bin/activate
 }
+
+ssh-con() {
+    ssh $(grep -P "^Host ([^*]+)$" $HOME/.ssh/config | sed 's/Host //' | fzf)
+}
