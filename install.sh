@@ -106,7 +106,7 @@ config_lighdm() {
   sudo sed -i \
     -e 's/#background=/background=\/usr\/share\/backgrounds\/dotfiles\/wallpaper.jpg/g' \
     -e 's/#theme-name=/theme-name=Catppuccin-Mocha-Standard-Sky-Dark/g' \
-    -e 's/#font-name=/font-name=JetBrainsMono Nerd Font/g' \
+    -e 's/#font-name=/font-name=JetBrainsMono NF/g' \
     $LIGHTDMCONF
   sudo systemctl enable lightdm.service
 }

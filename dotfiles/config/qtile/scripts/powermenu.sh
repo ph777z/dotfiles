@@ -1,9 +1,5 @@
 #!/bin/bash
 
-FONT="JetBrains:size=10"
-BLACK="#11111b"
-WHITE="#a6adc8"
-
 confirm_action() {
   confirm=$(echo -e "Sim\nNao" | rofi -dmenu -theme dmenu -p "Tem certeza?" -l 2 -i)
   case $confirm in

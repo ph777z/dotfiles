@@ -11,7 +11,7 @@ window:
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono NFM
     style: Bold
 
   size: 10
