@@ -241,7 +241,9 @@ main() {
   sudo chsh -s /bin/zsh $USER
   systemctl enable --user pipewire.service
   sudo systemctl enable bluetooth.service
-  sudo modprobe vboxdrv
+  if ! lsmod | grep -q vboxdrv;then
+    sudo modprobe vboxdrv
+  fi
   sudo updatedb
 
   dotbot_install
