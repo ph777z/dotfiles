@@ -37,6 +37,7 @@ keys = [
     Key([alt_key], 'Backspace', lazy.window.kill()),
     # Key([window_key], 'x', lazy.spawn('kitty bash -c "xprop;read"')),
     Key([alt_key, 'control'], 'g', lazy.window.toggle_floating()),
+    Key([], 'Print', lazy.spawn('flameshot gui')),
 
     Key([], 'XF86AudioLowerVolume', lazy.spawn('pamixer --decrease 5')),
     Key([], 'XF86AudioRaiseVolume', lazy.spawn('pamixer --increase 5')),
