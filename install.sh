@@ -193,7 +193,9 @@ neovim_config() {
     git clone https://github.com/pedrohenrick777/configs.nvim.git $NEOVIM_CONFIG_PATH
   fi
 
-  sudo npm install -g neovim
+  if ! npm ls -g | grep -q neovim;then
+    sudo npm install -g neovim
+  fi
 }
 
 icons_install() {
