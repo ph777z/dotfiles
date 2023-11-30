@@ -13,6 +13,7 @@ yay_apps=(
 )
 
 pacman_apps=(
+  'alacritty'
   'bat'
   'bluez'
   'btop'
@@ -20,6 +21,8 @@ pacman_apps=(
   'blueman'
   'chromium'
   'discord'
+  'docker'
+  'docker-compose'
   'dunst'
   'eza'
   'fd'
@@ -28,6 +31,7 @@ pacman_apps=(
   'flameshot'
   'flatpak'
   'fzf'
+  'git'
   'lazygit'
   'lightdm'
   'lightdm-gtk-greeter'
@@ -241,6 +245,8 @@ main() {
   sudo chsh -s /bin/zsh $USER
   systemctl enable --user pipewire.service
   sudo systemctl enable bluetooth.service
+  sudo systemctl enable docker
+  sudo usermod -aG docker $USER
   if ! lsmod | grep -q vboxdrv;then
     sudo modprobe vboxdrv
   fi
