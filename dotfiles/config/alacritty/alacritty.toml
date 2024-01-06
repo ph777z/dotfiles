@@ -1,0 +1,13 @@
+import = [
+    "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding = { x = 25, y = 20 }
+
+[font]
+normal = { family = "JetBrainsMono NFM", style = "Bold" }
+size = 10
