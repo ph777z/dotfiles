@@ -7,7 +7,13 @@ sudo -v
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOGFILE='dotfiles.log'
 
+flatpak_apps=(
+  'com.usebruno.Bruno'  
+  'io.beekeeperstudio.Studio'
+)
+
 yay_apps=(
+  'anydesk-bin'
   'devour'
   'catppuccin-gtk-theme-mocha'
 )
@@ -32,12 +38,12 @@ pacman_apps=(
   'flatpak'
   'fzf'
   'git'
+  'httpie'
   'lazygit'
   'lightdm'
   'lightdm-gtk-greeter'
   'man-db'
   'mpv'
-  'ncspot'
   'neofetch'
   'neovim'
   'nodejs'
@@ -70,6 +76,7 @@ pacman_apps=(
   'ripgrep'
   'rofi'
   'slock'
+  'spotify-launcher'
   'starship'
   'syncthing'
   'tk'
@@ -234,6 +241,7 @@ main() {
   sudo pacman -Sy
   sudo pacman -S --needed --noconfirm $(printf " %s" "${pacman_apps[@]}")
   yay -S --needed --noconfirm $(printf " %s" "${yay_apps[@]}")
+  flatpak install -y $(printf " %s" "${flatpak_apps[@]}")
 
   config_lighdm
   config_sudoers
