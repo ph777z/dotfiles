@@ -78,7 +78,6 @@ pacman_apps=(
   'slock'
   'spotify-launcher'
   'starship'
-  'syncthing'
   'tk'
   'tmux'
   'ttf-jetbrains-mono-nerd'
